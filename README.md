@@ -1,2 +1,4 @@
-# advanced-e-commerce
-Laravel 8 E-Commerce application.
+# Laravel 8 Advanced E-Commerce Application
+- Unlimited product
+- Unlimited category and subcategory
+- Unlimited product variations
