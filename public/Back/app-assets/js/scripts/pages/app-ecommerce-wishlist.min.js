@@ -1,0 +1,1 @@
+$((function(){"use strict";var o=$(".remove-wishlist"),e=$(".move-cart");o.on("click",(function(){$(this).closest(".ecommerce-card").remove(),toastr.error("","Removed Item 🗑️",{closeButton:!0,tapToDismiss:!1})})),e.on("click",(function(){$(this).closest(".ecommerce-card").remove(),toastr.success("","Moved Item To Your Cart 🛒",{closeButton:!0,tapToDismiss:!1})}))}));
