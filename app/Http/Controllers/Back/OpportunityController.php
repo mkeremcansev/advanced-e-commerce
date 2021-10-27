@@ -46,7 +46,7 @@ class OpportunityController extends Controller
     public function update($id)
     {
         $opportunity = Opportunity::where('id', $id)->first() ?? abort(404);
-        return view('Back.Update.opportunity', compact('opportunity'));
+        return view('Panel.Update.opportunity', compact('opportunity'));
     }
 
     public function put(Request $request, $id)

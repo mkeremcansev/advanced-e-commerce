@@ -25,6 +25,6 @@ class TestController extends Controller
 
     public function index()
     {
-        return view('Front.index');
+        return view('Web.index');
     }
 }

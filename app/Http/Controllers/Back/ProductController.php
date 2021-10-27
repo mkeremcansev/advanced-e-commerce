@@ -100,7 +100,7 @@ class ProductController extends Controller
     public function update($id)
     {
         $product = Product::where('id', $id)->first() ?? abort(404);
-        return view('Back.Update.product', compact('product'));
+        return view('Panel.Update.product', compact('product'));
     }
     public function put(Request $request, $id)
     {

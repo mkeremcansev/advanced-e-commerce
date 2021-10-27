@@ -38,7 +38,7 @@ class BrandController extends Controller
     {
         $brand = Brand::where('id', $id)->first();
         if ($brand) {
-            return view('Back.Update.brand', compact('brand'));
+            return view('Panel.Update.brand', compact('brand'));
         } else {
             return back();
         }

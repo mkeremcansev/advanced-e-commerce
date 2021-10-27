@@ -12,8 +12,6 @@ class Category extends Model
         'parent',
         'getParentsTree',
     ];
-    protected $table = 'category';
-
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');

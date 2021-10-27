@@ -16,7 +16,7 @@ class Authenticate extends Middleware
     {
         if (!$request->expectsJson()) {
             $request->session()->flash('error', __('words.user-middleware-message'));
-            return route('Front.main');
+            return route('Web.main');
         }
     }
 }

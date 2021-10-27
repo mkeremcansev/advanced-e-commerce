@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CampaignValue extends Model
 {
     use HasFactory;
-    protected $table = 'campaign_values';
     function getCampaignMain()
     {
         return $this->hasOne(Campaign::class, 'id', 'variant_id');

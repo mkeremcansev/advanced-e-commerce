@@ -29,7 +29,6 @@ class LoginController extends Controller
         $credentials = [
             'email' => $request->login_email,
             'password' => $request->login_password,
-            'isAdmin' => 0,
             'status' => 0
         ];
 
@@ -46,6 +45,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('Front.main')->with('success', __('words.logout-success'));
+        return redirect()->route('Web.main')->with('success', __('words.logout-success'));
     }
 }

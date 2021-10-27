@@ -38,7 +38,7 @@ class CampaignController extends Controller
     public function value($id)
     {
         $campaign = Campaign::where('id', $id)->first()  ?? abort(404);
-        return view('Back.Update.campaign', compact('campaign'));
+        return view('Panel.Update.campaign', compact('campaign'));
     }
 
     public function campaign(Request $request)
@@ -69,7 +69,7 @@ class CampaignController extends Controller
     public function update($id)
     {
         $campaign = Campaign::where('id', $id)->first() ?? abort(404);
-        return view('Back.Update.campaigns', compact('campaign'));
+        return view('Panel.Update.campaigns', compact('campaign'));
     }
 
     public function put(Request $request, $id)

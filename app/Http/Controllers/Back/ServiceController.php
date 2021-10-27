@@ -41,7 +41,7 @@ class ServiceController extends Controller
     {
         $service = Service::where('id', $id)->first();
         if ($service) {
-            return view('Back.Update.service', compact('service'));
+            return view('Panel.Update.service', compact('service'));
         } else {
             return back();
         }

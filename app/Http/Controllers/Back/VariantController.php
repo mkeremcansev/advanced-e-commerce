@@ -59,7 +59,7 @@ class VariantController extends Controller
     public function variant($id)
     {
         $product = Product::where('id', $id)->first()  ?? abort(404);
-        return view('Back.Update.variant', compact('product'));
+        return view('Panel.Update.variant', compact('product'));
     }
     public function delete($id)
     {
@@ -83,7 +83,7 @@ class VariantController extends Controller
     public function update($id)
     {
         $value = VariantValue::where('id', $id)->first() ?? abort(404);
-        return view('Back.Update.value', compact('value'));
+        return view('Panel.Update.value', compact('value'));
     }
     public function put(Request $request, $id)
     {

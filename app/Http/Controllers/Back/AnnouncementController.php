@@ -34,7 +34,7 @@ class AnnouncementController extends Controller
     public function update($id)
     {
         $announcement = Announcement::where('id', $id)->first() ?? abort(404);
-        return view('Back.Update.announcement', compact('announcement'));
+        return view('Panel.Update.announcement', compact('announcement'));
     }
 
     public function put(Request $request, $id)

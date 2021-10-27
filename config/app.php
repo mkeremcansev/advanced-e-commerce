@@ -162,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\ViewSharePovider::class,
-        App\Providers\OpportunityControlProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*

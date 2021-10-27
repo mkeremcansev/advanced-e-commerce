@@ -44,7 +44,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('id', $id)->first() ?? abort(404);
         if ($category) {
-            return view('Back.Update.category', compact('category'));
+            return view('Panel.Update.category', compact('category'));
         } else {
             return back();
         }

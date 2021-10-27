@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Gloudemans\Shoppingcart\Contracts\Buyable;
 
-class Product extends Model implements Buyable
+class Product extends Model
 {
     use HasFactory;
-    protected $table = 'products';
     protected $fillable = [
         'title',
         'description',
@@ -44,10 +42,10 @@ class Product extends Model implements Buyable
     }
     function getVariant()
     {
-        return $this->hasMany(Variant::class, 'product_id', 'id'); // variantın ürün id si ürünün id sine eşitse gönder
+        return $this->hasMany(Variant::class, 'product_id', 'id');
     }
     function getProductVariantValue()
     {
-        return $this->hasMany(VariantValue::class, 'product_id', 'id'); // variantın ürün id si ürünün id sine eşitse gönder
+        return $this->hasMany(VariantValue::class, 'product_id', 'id');
     }
 }
