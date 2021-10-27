@@ -4,11 +4,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 //Panel login route
-Route::get('/admin/login', function () {
-    return view('Panel.login');
-})->name('Panel.login.get');
+Route::prefix('admin')->middleware('AdminIsLogin')->name('Panel.')->group(
+    function () {
+        Route::get('/login', function () {
+            return view('Panel.login');
+        })->name('login.get');
+        Route::post('/login', [\App\Http\Controllers\Panel\LoginController::class, 'login'])->name('login');
+    }
+);
 
-Route::post('/admin/login', [\App\Http\Controllers\Panel\LoginController::class, 'login'])->name('Panel.login');
+
 
 //Panel middleware route
 Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
