@@ -14,6 +14,6 @@ class ProductController extends Controller
         $single = Product::where('slug', $slug)->first() ?? abort(404);
         $single->increment('hit', 1);
         $single->save();
-        return view('Web.single', compact('single'));
+        return view('Web.Layouts.main-single', compact('single'));
     }
 }

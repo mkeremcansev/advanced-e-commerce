@@ -3,26 +3,31 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
+Route::name('Web.')->middleware('auth')->group(function () {
+    Route::get('/account', function () {
+        return view('Web.Layouts.Account.account');
+    })->name('account');
+});
+
 Route::name('Web.')->group(
     function () {
-        Route::get('/cart', function () {
-            return view('Web.cart');
-        })->name('cart');
-        Route::get('/wishlist', function () {
-            return view('Web.wishlist');
-        })->name('wishlist');
-        Route::get('/compare', function () {
-            return view('Web.compare');
-        })->name('compare');
         Route::get('/', function () {
             return view('Web.index');
         })->name('main');
+        Route::get('/cart', function () {
+            return view('Web.Layouts.main-cart');
+        })->name('cart');
+        Route::get('/wishlist', function () {
+            return view('Web.Layouts.main-wishlist');
+        })->name('wishlist');
+        Route::get('/compare', function () {
+            return view('Web.Layouts.main-compare');
+        })->name('compare');
         Route::get('/login-register', function () {
-            return view('Web.login-register');
+            return view('Web.Layouts.main-login-register');
         })->name('login-register');
-        Route::get('/account', function () {
-            return view('Web.account');
-        })->name('account')->middleware('auth');
 
         Route::post('/cart-add', [\App\Http\Controllers\Web\CartController::class, 'create'])->name('Cart.add');
         Route::post('/cart-update/{id}', [\App\Http\Controllers\Web\CartController::class, 'put'])->name('Cart.update');
