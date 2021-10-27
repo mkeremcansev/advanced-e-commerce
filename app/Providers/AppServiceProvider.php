@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $campaigns = Campaign::orderBy('id', 'desc')->get();
         foreach ($campaigns as $campaign) {
             if ($campaign->getCampaignValue->count() == false) {
-                $campaign->status = 0;
+                $campaign->status = false;
                 $campaign->save();
             }
         }
