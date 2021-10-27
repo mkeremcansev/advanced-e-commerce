@@ -3402,7 +3402,7 @@ table .product-thumbnail img {
   background-color: #fff;
   padding: 10px 12px;
   overflow: hidden;
-  max-height: 320px;
+  /* max-height: 320px; */
 }
 
 .product-cart-wrap .product-img-action-wrap .product-img {
