@@ -165,7 +165,7 @@
                             <span class="avatar"
                                 ><img
                                     class="round"
-                                    src="{{ asset('Back') }}/app-assets/images/portrait/small/avatar-s-11.jpg"
+                                    src="{{ asset('Panel/app-assets/images/portrait/small/avatar-s-11.jpg') }}"
                                     alt="avatar"
                                     height="40"
                                     width="40"
