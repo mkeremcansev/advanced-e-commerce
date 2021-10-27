@@ -69,7 +69,7 @@ $(document).ready(function () {
                                         </td>
                                         <td class="price"><span >{{ priceToFormat($cart->price) }} ₺</span></td>
                                         <td class="text-center">
-                                            <input type="number" class="col-lg-3 quantity-val" min="1" max="20" value="{{ $cart->qty }}" id="quantity-{{ $cart->rowId }}" data-id="{{ $cart->rowId }}">
+                                            <input type="number" class="col-lg-3 quantity-val" min="1" value="{{ $cart->qty }}" id="quantity-{{ $cart->rowId }}" data-id="{{ $cart->rowId }}">
                                         </td>
                                         <td class="price"><span id="price-{{ $cart->rowId }}">{{ priceToFormat($cart->price *  $cart->qty) }} ₺</span></td>
                                         <td class="action"><a href="{{ route('Web.Cart.delete', $cart->rowId) }}" class="text-muted"><i class="fi-rs-trash"></i></a></td>
