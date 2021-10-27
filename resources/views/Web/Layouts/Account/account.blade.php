@@ -94,7 +94,7 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-12">
                                                             <label>@lang('words.name-surname')</label>
-                                                            <input class="form-control square" name="name" type="text" disabled value="{{ Auth::user()->name_surname }}">
+                                                            <input class="form-control square" name="name" type="text" disabled value="{{ Auth::user()->name }}">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label>@lang('words.phone')</label>

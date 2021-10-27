@@ -12,6 +12,12 @@ Route::name('Web.')->middleware('User')->group(function () {
     Route::post('/account-update', [\App\Http\Controllers\Web\AccountController::class, 'put'])->name('Account.update');
 });
 
+Route::name('Web.')->middleware('UserIsLogin')->group(function () {
+    Route::get('/login-register', function () {
+        return view('Web.Layouts.main-login-register');
+    })->name('login-register');
+});
+
 Route::name('Web.')->group(
     function () {
         Route::get('/', function () {
@@ -26,9 +32,6 @@ Route::name('Web.')->group(
         Route::get('/compare', function () {
             return view('Web.Layouts.main-compare');
         })->name('compare');
-        Route::get('/login-register', function () {
-            return view('Web.Layouts.main-login-register');
-        })->name('login-register');
 
         //Cart route
         Route::post('/cart-add', [\App\Http\Controllers\Web\CartController::class, 'create'])->name('Cart.add');

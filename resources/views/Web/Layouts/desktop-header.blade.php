@@ -34,18 +34,29 @@
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-                                <a href="{{ route('Web.login-register') }}">
-                                    <i class="fi-rs-user"></i>
-                                </a>
+                                @if (Auth::check() && Auth::user()->status == false)
+                                    <a href="{{ route('Web.account') }}">
+                                        <i class="fi-rs-user"></i>
+                                    </a>
+                                @elseif(Auth::check() && Auth::user()->status == true)
+                                    <a href="{{ route('Panel.main') }}">
+                                        <i class="fi-rs-user"></i>
+                                    </a>
+                                @else
+                                    <a href="{{ route('Web.login-register') }}">
+                                        <i class="fi-rs-user"></i>
+                                    </a>
+                                @endif
+                                
                             </div>
                             <div id="cwCompare" class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
+                                <a href="{{ route('Web.compare') }}">
                                     <i class="fi-rs-copy"></i>
-                                    <span class="pro-count white">{{ Cart::instance('wishlist')->content()->count() }}</span>
+                                    <span class="pro-count white">{{ Cart::instance('compare')->content()->count() }}</span>
                                 </a>
                             </div>
                             <div id="cwWishlist" class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
+                                <a href="{{ route('Web.wishlist') }}">
                                     <i class="fi-rs-heart"></i>
                                     <span class="pro-count white">{{ Cart::instance('wishlist')->content()->count() }}</span>
                                 </a>
