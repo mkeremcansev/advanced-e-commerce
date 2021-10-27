@@ -95,7 +95,7 @@ $(document).ready(function () {
                                     <tr>
                                         <td class="image product-thumbnail"><img src="{{ asset(firstImage($cart->model->images)) }}" alt="#"></td>
                                         <td class="product-des product-name">
-                                            <h5 class="product-name"><a href="{{ route('Web.product.single', ['category'=>$cart->model->getCategory->slug, 'slug'=>$cart->model->slug]) }}">{{ $cart->name }}</a></h5>
+                                            <h5 class="product-name"><a href="{{ route('Web.product.single', $cart->model->slug) }}">{{ $cart->name }}</a></h5>
                                             <p class="font-xs canseworksFontWeight">@foreach (json_decode($cart->options, true) as $key => $option) {{ "(".$key . ' : ' . $option.") "}} @endforeach</p>
                                         </td>
                                         <td class="price"><span >{{ priceToFormat($cart->price) }} ₺</span></td>
