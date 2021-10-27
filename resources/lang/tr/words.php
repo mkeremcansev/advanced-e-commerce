@@ -263,7 +263,7 @@ return [
     'product-image-min' => 'Ürün Resim alanı en az :min adet resim içermelidir.',
     'product-image-delete-success' => 'Ürün Resim silme işlemi başarıyla gerçekleşti',
     'product-image-delete-error' => 'Ürün Resim silme işlemi başarısız.',
-    'product-value-yes' => 'Ürün`e ait Varyasyon, Kampayna, Fırsat bulunuyor.',
+    'product-value-yes' => 'Ürün`e ait Varyasyon, Bilgi veya Kampanya bulunuyor.',
     'product-opportunity-yes' => 'Ürün fırsat listesinde bulunuyor.',
     'product-edit' => 'Ürün Düzenle',
     'product-images' => 'Ürün`e ait Resimler',
