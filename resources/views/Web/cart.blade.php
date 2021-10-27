@@ -5,12 +5,12 @@
 @section('script')
 <script>
 $(document).ready(function () {
-    $('.qty-up').on('click',function name(e) {
+    $('.quantity-val').on('change',function name(e) {
         let thisItem = $(this);
         let dataId = thisItem.attr('data-id')
         let url = "{{ route('Web.Cart.update', ":id") }}";
         url = url.replace(':id', dataId);
-        let quantity = $('.detail-qty #quantity-'+dataId+'').text();
+        let quantity = $('#quantity-'+dataId+'').val();
         $.ajax({
             type: 'POST',
             url: url,
@@ -26,38 +26,7 @@ $(document).ready(function () {
                 $(".total span").html(data.total+' ₺')
             },
             error: function (data) {
-                // iziToast.error({
-                //     message: validateItem(data)
-                // });
-                console.log('başarısız!')
-            },
-        }); 
-    });
-    $('.qty-down').on('click',function name(e) {
-        let thisItem = $(this);
-        let dataId = thisItem.attr('data-id')
-        let url = "{{ route('Web.Cart.update', ":id") }}";
-        url = url.replace(':id', dataId);
-        let quantity = $('.detail-qty #quantity-'+dataId+'').text();
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: {quantity:quantity},
-            dataType: 'json',
-            success: function (data) {
-                iziToast.success({
-                    message: data.message
-                });
-                $(".price #price-"+data.id+"").html(data.price+' ₺')
-                $(".subtotal span").html(data.subtotal+' ₺')
-                $(".tax span").html('%18 ('+data.tax+' ₺ )')
-                $(".total span").html(data.total+' ₺')
-            },
-            error: function (data) {
-                // iziToast.error({
-                //     message: validateItem(data)
-                // });
-                console.log('başarısız!')
+                console.log('@lang("words.error")')
             },
         }); 
     });
@@ -100,11 +69,7 @@ $(document).ready(function () {
                                         </td>
                                         <td class="price"><span >{{ priceToFormat($cart->price) }} ₺</span></td>
                                         <td class="text-center">
-                                            <div class="detail-qty border radius m-auto">
-                                                <a id="qty" data-id="{{ $cart->rowId }}" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                                <span id="quantity-{{ $cart->rowId }}"  class="qty-val canseworksMR100">{{ $cart->qty }}</span>
-                                                <a id="qty" data-id="{{ $cart->rowId }}"  class="qty-up" data-quantity="{{ $cart->rowId }}"><i class="fi-rs-angle-small-up"></i></a>
-                                            </div>
+                                            <input type="number" class="col-lg-3 quantity-val" min="1" max="20" value="{{ $cart->qty }}" id="quantity-{{ $cart->rowId }}" data-id="{{ $cart->rowId }}">
                                         </td>
                                         <td class="price"><span id="price-{{ $cart->rowId }}">{{ priceToFormat($cart->price *  $cart->qty) }} ₺</span></td>
                                         <td class="action"><a href="{{ route('Web.Cart.delete', $cart->rowId) }}" class="text-muted"><i class="fi-rs-trash"></i></a></td>
