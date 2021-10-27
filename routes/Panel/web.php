@@ -13,8 +13,6 @@ Route::prefix('admin')->middleware('AdminIsLogin')->name('Panel.')->group(
     }
 );
 
-
-
 //Panel middleware route
 Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
     function () {
