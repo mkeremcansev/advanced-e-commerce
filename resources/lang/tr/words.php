@@ -73,7 +73,7 @@ return [
     '30-day-return' => '30 Gün İçerisinde İade Garantisi',
     'happy-customer' => 'Sorunsuz Teslimat ve Mutlu Müşteri',
     'cash-on-security' => 'Güvenli ve Sorunsuz Ödeme Garantisi',
-
+    'new-products' => 'Yenİ Ürünler',
 
 
 
