@@ -14,7 +14,7 @@ return [
     'my-account' => 'Hesabım',
     'follow-us' => 'Bizi Takip Edin',
     'settings' => 'Ayarlar',
-    'homepage' => 'Anasayfa',
+    'homepage' => 'Ana sayfa',
     'website-title' => 'Website Başlık',
     'website-description' => 'Website Açıklama',
     'save' => 'Kaydet',
@@ -74,16 +74,19 @@ return [
     'happy-customer' => 'Sorunsuz Teslimat ve Mutlu Müşteri',
     'cash-on-security' => 'Güvenli ve Sorunsuz Ödeme Garantisi',
     'new-products' => 'Yenİ Ürünler',
+    'admin-panel' => 'Yönetim Paneli',
+    'admin-login-alert' => 'Eğer bu sayfa hakkında bir bilginiz yok ise lütfen sayfayı kapatınız.',
 
 
 
-    'hello-user' => 'Merhaba, :name!',
+    'hello-user' => 'Merhaba, :name !',
     'logout' => 'Çıkış Yap',
     'my-info' => 'Bilgilerim',
     'my-order' => 'Siparişlerim',
     'register-policy' => 'Üyelik Sözleşmesi',
     'account-update-success' => 'Şifre güncellemesi başarıyla gerçekleşti.',
     'user-middleware-message' => 'Kullanıcı girişi gerekmektedir.',
+    'admin-middleware-message' => 'Yönetici girişi gerekmektedir.',
 
 
     //general words

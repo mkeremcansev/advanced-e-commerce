@@ -26,11 +26,7 @@
             type="text/css"
             href="{{ asset('Panel/app-assets/vendors/css/vendors.min.css') }}"
         />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ asset('Panel/app-assets/vendors/css/extensions/toastr.min.css') }}"
-        />
+        <link rel="stylesheet"type="text/css"href="{{ asset('Panel/app-assets/vendors/css/extensions/toastr.min.css') }}" />
         <link
             rel="stylesheet"
             type="text/css"
@@ -71,11 +67,7 @@
             type="text/css"
             href="{{ asset('Panel/app-assets/css/core/menu/menu-types/horizontal-menu.css') }}"
         />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ asset('Panel/app-assets/css/plugins/extensions/ext-component-toastr.css') }}"
-        />
+        <link rel="stylesheet" type="text/css" href="{{ asset('Panel/app-assets/css/plugins/extensions/ext-component-toastr.css') }}"/>
         <link
             rel="stylesheet"
             type="text/css"
@@ -158,9 +150,8 @@
                         >
                             <div class="user-nav d-sm-flex d-none">
                                 <span class="user-name font-weight-bolder">
-                                    Mustafa Kerem
+                                    {{ Auth::user()->name }}
                                 </span>
-                                <span class="user-status">Yönetici</span>
                             </div>
                             <span class="avatar"
                                 ><img
@@ -173,14 +164,15 @@
                                 <span class="avatar-status-online"> </span>
                             </span>
                         </a>
-                        <div
-                            class="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="dropdown-user"
-                        >
-                            <a class="dropdown-item" href="page-profile.html"
-                                ><i class="mr-50" data-feather="user"></i
-                                >Profile</a
-                            >
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
+                            <a class="dropdown-item" href="page-profile.html">
+                                <i class="mr-50" data-feather="user"></i>
+                                @lang('words.my-account')
+                            </a>
+                            <a class="dropdown-item" href="{{ route('Panel.logout') }}">
+                                <i class="mr-50" data-feather="power"></i>
+                                @lang('words.logout')
+                            </a>
                         </div>
                     </li>
                 </ul>

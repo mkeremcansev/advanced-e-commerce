@@ -86,12 +86,19 @@
                                     </a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 profile-dropdown-canseworks">
                                         <ul>
-                                            @if (Auth::user())
+                                            @if (Auth::check() && Auth::user()->status == 0)
                                                 <li>
                                                     <a class="canseworksFontWeight" href="{{ route('Web.account') }}">@lang('words.my-account')</a>
                                                 </li>
                                                 <li>
                                                     <a class="canseworksFontWeight" href="{{ route('Web.Logout.add') }}">@lang('words.logout')</a>
+                                                </li>
+                                            @elseif(Auth::check() && Auth::user()->status == 1)
+                                                <li>
+                                                    <a class="canseworksFontWeight" href="{{ route('Panel.main') }}">@lang('words.admin-panel')</a>
+                                                </li>
+                                                <li>
+                                                    <a class="canseworksFontWeight" href="{{ route('Panel.logout') }}">@lang('words.logout')</a>
                                                 </li>
                                             @else
                                                 <li>

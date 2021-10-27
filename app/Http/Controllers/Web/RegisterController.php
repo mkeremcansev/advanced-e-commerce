@@ -14,7 +14,7 @@ class RegisterController extends Controller
     {
         $fill = $request->validate(
             [
-                'name_surname' => 'required|min:3|max:30',
+                'name' => 'required|min:3|max:30',
                 'phone' => 'required|min:10|max:13||unique:users',
                 'email' => 'required|email|min:5|max:30|unique:users',
                 'password' => 'required|min:8|max:20',
@@ -22,9 +22,9 @@ class RegisterController extends Controller
                 'policy' => 'required',
             ],
             [
-                'name_surname.required' => __('words.name-surname-required'),
-                'name_surname.min' => __('words.name-surname-min', ['min' => ':min']),
-                'name_surname.max' => __('words.name-surname-max', ['max' => ':max']),
+                'name.required' => __('words.name-surname-required'),
+                'name.min' => __('words.name-surname-min', ['min' => ':min']),
+                'name.max' => __('words.name-surname-max', ['max' => ':max']),
 
                 'username.required' => __('words.username-required'),
                 'username.min' => __('words.username-min', ['min' => ':min']),

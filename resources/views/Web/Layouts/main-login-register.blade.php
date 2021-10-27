@@ -8,7 +8,7 @@ $(document).ready(function () {
     $("#register").on("click",function(e){
         e.preventDefault()
         var formData = new FormData();
-        formData.append("name_surname", $("#name_surname").val());
+        formData.append("name", $("#name").val());
         formData.append("phone", $("#phone").val());
         formData.append("email", $("#email").val());
         formData.append("password", $("#password").val());
@@ -134,7 +134,7 @@ $(document).ready(function () {
                                         <form id="register_form">
                                              <div class="row">
                                             <div class="form-group ">
-                                                <input type="text" required="" id="name_surname" placeholder="@lang('words.name-surname')">
+                                                <input type="text" required="" id="name" placeholder="@lang('words.name-surname')">
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <input type="text" required="" id="phone" placeholder="@lang('words.phone')">

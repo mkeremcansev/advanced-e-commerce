@@ -3,7 +3,15 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('e-admin')->name('Panel.')->group(
+//Panel login route
+Route::get('/admin/login', function () {
+    return view('Panel.login');
+})->name('Panel.login.get');
+
+Route::post('/admin/login', [\App\Http\Controllers\Panel\LoginController::class, 'login'])->name('Panel.login');
+
+//Panel middleware route
+Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
     function () {
         //Main route
         Route::get('/', function () {
@@ -15,6 +23,9 @@ Route::prefix('e-admin')->name('Panel.')->group(
             return view('Panel.settings');
         })->name('settings');
         Route::post('/settings', [\App\Http\Controllers\Panel\SettingController::class, 'put'])->name('Setting.update');
+
+        //Logout route
+        Route::get('/logout', [\App\Http\Controllers\Panel\LoginController::class, 'logout'])->name('logout');
 
         //Category route
         Route::get('/category-add', function () {
