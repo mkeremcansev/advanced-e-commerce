@@ -101,9 +101,9 @@
                 <div class="footer-bottom"></div>
             </div>
             <div class="col-lg-12 text-center">
-                <p class="float-md-left font-sm text-muted mb-0">&copy; <script>
-                        new Date().getFullYear() > document.write(new Date().getFullYear());
-                    </script> <strong class="text-brand">{{ $settings->footer }}</strong></p>
+                <p class="float-md-left font-sm text-muted mb-0">
+                    <strong class="text-brand">{{ $settings->footer }}</strong>
+                </p>
             </div>
         </div>
     </div>
