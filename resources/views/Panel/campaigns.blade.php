@@ -47,7 +47,7 @@
                                         @foreach ($campaigns as $campaign)
                                         <tr>
                                             <td></td>
-                                            <td><img width="50" src="{{ asset($campaign->image) }}" alt=""></td>
+                                            <td><img width="50" src="{{ asset($campaign->image) }}"></td>
                                             <td>{{ $campaign->title }}</td>
                                             <td><span class="text-primary font-weight-bold">{{ $campaign->getCampaignValue->count() }}</span> </td>
                                             <td>
