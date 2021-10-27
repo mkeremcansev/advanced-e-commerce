@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Campaign;
 use App\Models\CampaignValue;
 use App\Models\Product;
 use Illuminate\Support\ServiceProvider;
@@ -25,10 +26,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //Campaign control
+        $campaigns = Campaign::orderBy('id', 'desc')->get();
+        foreach ($campaigns as $campaign) {
+            if ($campaign->getCampaignValue->count() == false) {
+                $campaign->status = 0;
+                $campaign->save();
+            }
+        }
+
+        //Campaign value control
         $values = CampaignValue::orderBy('id', 'desc')->get();
         foreach ($values as $value) {
             $product = Product::where('id', $value->product_id)->first();
-            if ($product->status == 0) {
+            if ($product->status == false) {
                 CampaignValue::where('id', $value->id)->delete();
             }
         }
