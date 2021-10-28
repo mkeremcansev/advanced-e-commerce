@@ -81,7 +81,7 @@
                         <div class="header-action-right">
                             <div class="header-action-2">
                                 <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="">
+                                    <a class="mini-cart-icon">
                                         <i class="fi-rs-user"></i>
                                     </a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 profile-dropdown-canseworks">
