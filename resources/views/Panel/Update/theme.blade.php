@@ -41,7 +41,7 @@ $(document).ready(function () {
                     <div class="col-md-6">
                         <div class="alert alert-success" role="alert">
                             <div class="alert-body">
-                                @lang('words.service-alert')
+                                @lang('words.theme-alert')
                             </div>
                         </div>
                         <div class="card">

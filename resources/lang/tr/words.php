@@ -161,6 +161,7 @@ return [
     'favicon-type' => 'Website Favicon alanı :type uzantılı dosya biçiminde olmalıdır.',
     'favicon-max' => 'Website Favicon alanı en fazla :max kb boyutunda olmalıdır.',
     'setting-alert' => 'Yapılan düzenlemeler genel projeyi etkilemektedir.',
+    'theme-alert' => 'Yapılan düzenlemeler genel projeyi etkilemektedir.',
     'setting-keywords-alert' => 'Bu alan "anahtar, kelimeler," şeklinde girilmelidir.',
     'setting-success-message' => 'Genel Ayarlar güncelleme işlemi başarıyla gerçekleşti.',
     'product-desc' => 'Ürün Açıklaması',
