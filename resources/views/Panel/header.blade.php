@@ -225,17 +225,15 @@
                             >
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a
-                                        class="
-                                            dropdown-item
-                                            d-flex
-                                            align-items-center
-                                        "
-                                        href="{{ route('Panel.settings') }}"
-                                        data-toggle="dropdown"
-                                    >
-                                        <i data-feather="settings"></i>
-                                        <span>@lang('words.settings')</span>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.settings') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.general-settings')</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.theme') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.theme-settings')</span>
                                     </a>
                                 </li>
                             </ul>

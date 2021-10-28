@@ -10,6 +10,7 @@ use App\Models\Opportunity;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
@@ -43,6 +44,7 @@ class ViewSharePovider extends ServiceProvider
             view()->share('brands', Brand::orderBy('id', 'DESC')->get());
             view()->share('opportunitys', Opportunity::orderBy('id', 'DESC')->get());
             view()->share('settings', Setting::where('id', 1)->first());
+            view()->share('themes', Theme::where('id', 1)->first());
             view()->share('announcements', Announcement::orderBy('id', 'DESC')->get());
             view()->share('campaigns', Campaign::orderBy('id', 'DESC')->get());
             view()->share('_products', Product::where('status', 1)->get());

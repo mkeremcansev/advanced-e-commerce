@@ -49,29 +49,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3">
-                    <h5 class="widget-title wow fadeIn animated">...........</h5>
+                <div class="col-lg-4 col-md-3">
+                    <h5 class="widget-title wow fadeIn animated">@lang('words.popular-products')</h5>
                     <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
+                        @foreach ($_products->sortByDesc('hit')->take(3) as $product) 
+                        <li><a href="{{ route('Web.product.single', $product->slug) }}">{{ $product->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="col-lg-2  col-md-3">
-                    <h5 class="widget-title wow fadeIn animated">...........</h5>
+                <div class="col-lg-4  col-md-3">
+                    <h5 class="widget-title wow fadeIn animated">@lang('words.new-products')</h5>
                     <ul class="footer-list wow fadeIn animated">
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
-                        <li><a href="#">...........</a></li>
+                        @foreach ($_products->sortByDesc('id')->take(3) as $product)
+                        <li><a href="{{ route('Web.product.single', $product->slug) }}">{{ $product->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <h5 class="widget-title wow fadeIn animated">...........</h5>
                     <div class="row">
                         <div class="col-md-8 col-lg-12">
@@ -89,7 +83,7 @@
                                 src="{{ asset('Web') }}/assets/imgs/theme/payment-method.png" alt="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

@@ -90,7 +90,8 @@ return [
     'user' => 'Kullanıcı',
     'category-products-searched' => '":category" kategorisine ait ":count" ürün bulundu.',
     'category-not-product' => 'Kategoriye ait ürün bulunmamaktadır.',
-
+    'primary-color' => 'Ana Renk',
+    'secondary-color' => 'Ara Renk',
 
     'hello-user' => 'Merhaba, :name !',
     'logout' => 'Çıkış Yap',
@@ -104,6 +105,7 @@ return [
 
     //general words
     'general-settings' => 'Genel Ayarlar',
+    'theme-settings' => 'Tema Ayarları',
     'website-title' => 'Website Başlık',
     'website-description' => 'Website Açıklama',
     'website-keywords' => 'Website Anahtar Kelime',
@@ -118,6 +120,9 @@ return [
     'website-phone' => 'Website Telefon',
     'website-logo' => 'Website Logo',
     'website-favicon' => 'Website Favicon',
+    'theme-primary-required' => 'Ana Renk alanı zorunludur.',
+    'theme-secondary-required' => 'Ara Renk alanı zorunludur.',
+    'theme-update-success' => 'Tema Ayarlar güncelleme işlemi başarıyla gerçekleşti.',
     'setting-title-required' => 'Website Başlık alanı zorunludur.',
     'setting-title-max' => 'Website Başlık alanı en fazla :max karakter olmalıdır.',
     'setting-title-min' => 'Website Başlık alanı en az :min karakter olmalıdır.',

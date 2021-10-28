@@ -21,11 +21,17 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
             return view('Panel.index');
         })->name('main');
 
-        //Settinf route
+        //Setting route
         Route::get('/settings', function () {
             return view('Panel.settings');
         })->name('settings');
         Route::post('/settings', [\App\Http\Controllers\Panel\SettingController::class, 'put'])->name('Setting.update');
+
+        //Theme route
+        Route::get('/theme', function () {
+            return view('Panel.Update.theme');
+        })->name('theme');
+        Route::post('/theme', [\App\Http\Controllers\Panel\ThemeController::class, 'put'])->name('Theme.update');
 
         //Logout route
         Route::get('/logout', [\App\Http\Controllers\Panel\LoginController::class, 'logout'])->name('logout');

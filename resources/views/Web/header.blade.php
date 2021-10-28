@@ -11,15 +11,8 @@
     <link rel="stylesheet" href="{{ asset('Web/assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('Web/assets/css/iziToast.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        :root {
-            --main--project--color: #0077ff;
-            --product--btn--border--color : #0077ff;
-            --product--btn--bg--color : #52a3ff;
-        }
-    </style>
+    @include('Web.Layouts.root-color')
 </head>
-
 <body> <!-- oncontextmenu="return false" ondragstart="return false" onselectstart="return false" -->
     <header class="header-area header-style-3 header-height-2">
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
