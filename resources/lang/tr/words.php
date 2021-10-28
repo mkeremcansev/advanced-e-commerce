@@ -88,6 +88,8 @@ return [
     'unbanned' => 'Engeli Kaldır',
     'unbanned-user-update-success' => 'Engel Kaldırma işlemi başarıyla gerçekleşti.',
     'user' => 'Kullanıcı',
+    'category-products-searched' => '":category" kategorisine ait ":count" ürün bulundu.',
+    'category-not-product' => 'Kategoriye ait ürün bulunmamaktadır.',
 
 
     'hello-user' => 'Merhaba, :name !',

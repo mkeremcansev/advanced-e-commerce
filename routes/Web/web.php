@@ -53,6 +53,7 @@ Route::name('Web.')->group(
         Route::get('/logout', [\App\Http\Controllers\Web\LoginController::class, 'logout'])->name('Logout.add');
 
         //Account route
+        Route::get('/category/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'category'])->name('category.products');
         Route::get('/product/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'single'])->name('product.single');
     }
 );

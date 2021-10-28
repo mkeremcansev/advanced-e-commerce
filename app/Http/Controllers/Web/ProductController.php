@@ -16,4 +16,11 @@ class ProductController extends Controller
         $single->save();
         return view('Web.Layouts.main-single', compact('single'));
     }
+
+    public function category($slug)
+    {
+        $category = Category::where('slug', $slug)->first() ?? abort(404);
+        $products = Product::where('category_id', $category->id)->paginate(12)->onEachSide(0);
+        return view('Web.Layouts.main-category-products', ['products' => $products, 'category' => $category->title]);
+    }
 }

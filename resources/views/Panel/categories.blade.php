@@ -71,8 +71,6 @@
                                     <div id="jstree-basic">
                                         <ul>
                                             @foreach ($categorys as $category)
-                                                
-                                            
                                             <li data-jstree='{"icon" : "fa fa-plus"}'>
                                                 {{ $category->title }}
                                                 <ul>

@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $category = new Category;
         $category->parent_id = $request->main;
         $category->title = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->slug = Str::slug($request->name . "-" . rand(10000, 99999));
         if ($request->hasFile('image')) {
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }
@@ -69,7 +69,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->parent_id = $request->main;
         $category->title = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->slug = Str::slug($request->name . "-" . rand(10000, 99999));
         if ($request->hasFile('image')) {
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }

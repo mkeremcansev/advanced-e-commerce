@@ -8,21 +8,21 @@
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block zIndexCanseworks">
                             <nav>
                                 <ul>
-                                    @foreach ($categorys as $item)
-                                        @if (count($item->children))
+                                    @foreach ($categorys as $category)
+                                        @if (count($category->children))
                                         <li>
                                             <ul class="dropdown-c">
                                                 <li>
-                                                    <a class="cwCategoryFontSize85" href="{{ $item->slug }}">{{ $item->title }}</a>
+                                                    <a class="cwCategoryFontSize85" href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
                                                     <ul>
-                                                        @include('Web.Category.category', ['children'=>$item->children])
+                                                        @include('Web.Category.category', ['children'=>$category->children])
                                                     </ul>
                                                 </li>
                                             </ul>
                                             @else
                                             <ul class="dropdown-c">
                                                 <li>
-                                                    <a class="cwCategoryFontSize85" href="{{ $item->slug }}">{{ $item->title }}</a>
+                                                    <a class="cwCategoryFontSize85" href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
                                                 </li>
                                             </ul>
                                         @endif

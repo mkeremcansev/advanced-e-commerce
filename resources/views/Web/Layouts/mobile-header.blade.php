@@ -21,17 +21,17 @@
             <div class="mobile-menu-wrap mobile-header-border">
                 <nav>
                     <ul class="mobile-menu">
-                        @foreach ($categorys as $item)
-                        @if (count($item->children))
+                        @foreach ($categorys as $category)
+                        @if (count($category->children))
                         <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                href="{{ $item->slug }}">{{ $item->title }}</a>
+                                href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
                             <ul class="dropdown">
-                                @include('Web.Category.mobile', ['children'=>$item->children])
+                                @include('Web.Category.mobile', ['children'=>$category->children])
                             </ul>
                         </li>
                         @else
                         <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                href="{{ $item->slug }}">{{ $item->title }}</a>
+                                href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
                         </li>
                         @endif
                         @endforeach

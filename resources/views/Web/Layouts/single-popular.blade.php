@@ -16,7 +16,7 @@
             @else
                 <span>{{ $popular->price }} ₺</span>
             @endif
-            <div class="mb-1 cwFWB">
+            <div class="mb-1 cwFWB cweyeColor">
                 <i class="fa fa-eye"></i><span class="ml-1">{{ $popular->hit }}</span>
             </div>
             
