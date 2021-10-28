@@ -1,6 +1,6 @@
 @extends('Panel.main')
 @section('title')
-@lang('words.user-list')
+@lang('words.member-list')
 @endsection
 @section('script')
 @if ($message = Session::get('success'))
@@ -27,7 +27,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header border-bottom">
-                                <h4 class="card-title">@lang('words.user-list')</h4>
+                                <h4 class="card-title">@lang('words.member-list')</h4>
                             </div>
                             <div class="card-datatable">
                                 <table id="brand_list_table" class="dt-responsive table">
@@ -41,18 +41,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $user)
+                                        @foreach ($members as $member)
                                         <tr>
                                             <td></td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->phone }}</td>
-                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $member->name }}</td>
+                                            <td>{{ $member->phone }}</td>
+                                            <td>{{ $member->email }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('words.actions')</button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                                        <a class="dropdown-item text-warning" href="{{ route('Panel.user-to-admin.update', $user->id) }}">@lang('words.admin')</a>
-                                                        <a class="dropdown-item text-danger" href="{{ route('Panel.banned', $user->id) }}">@lang('words.banned')</a>
+                                                        <a class="dropdown-item text-warning" href="{{ route('Panel.member-to-admin.update', $member->id) }}">@lang('words.admin')</a>
+                                                        <a class="dropdown-item text-danger" href="{{ route('Panel.banned', $member->id) }}">@lang('words.banned')</a>
                                                     </div>
                                                 </div>
                                             </td>

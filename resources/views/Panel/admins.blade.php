@@ -51,7 +51,7 @@
                                                 <div class="btn-group">
                                                     <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('words.actions')</button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                                        <a class="dropdown-item text-warning" href="{{ route('Panel.admin-to-user.update', $admin->id) }}">@lang('words.user')</a>
+                                                        <a class="dropdown-item text-warning" href="{{ route('Panel.admin-to-member.update', $admin->id) }}">@lang('words.member')</a>
                                                         <a class="dropdown-item text-danger" href="{{ route('Panel.banned', $admin->id) }}">@lang('words.banned')</a>
                                                     </div>
                                                 </div>

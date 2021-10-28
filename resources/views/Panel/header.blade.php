@@ -487,9 +487,9 @@
                                         <i data-feather="chevrons-right"></i>
                                         <span>@lang('words.admin-list')</span>
                                     </a>
-                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.users') }}" data-toggle="dropdown">
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.members') }}" data-toggle="dropdown">
                                         <i data-feather="chevrons-right"></i>
-                                        <span>@lang('words.user-list')</span>
+                                        <span>@lang('words.member-list')</span>
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.blockeds') }}" data-toggle="dropdown">
                                         <i data-feather="chevrons-right"></i>

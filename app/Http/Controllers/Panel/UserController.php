@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function user($id)
+    public function member($id)
     {
         $user = User::where('id', $id)->first() ?? abort(404);
         $user->status = 0;

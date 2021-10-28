@@ -35,14 +35,14 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
             return view('Panel.admins');
         })->name('admins');
 
-        Route::get('/admin-to-user/{id}', [\App\Http\Controllers\Panel\UserController::class, 'user'])->name('admin-to-user.update');
+        Route::get('/admin-to-member/{id}', [\App\Http\Controllers\Panel\UserController::class, 'member'])->name('admin-to-member.update');
 
         //Users route
-        Route::get('/users', function () {
-            return view('Panel.users');
-        })->name('users');
+        Route::get('/members', function () {
+            return view('Panel.members');
+        })->name('members');
 
-        Route::get('/user-to-admin/{id}', [\App\Http\Controllers\Panel\UserController::class, 'admin'])->name('user-to-admin.update');
+        Route::get('/member-to-admin/{id}', [\App\Http\Controllers\Panel\UserController::class, 'admin'])->name('member-to-admin.update');
 
         Route::get('/banned/{id}', [\App\Http\Controllers\Panel\UserController::class, 'banned'])->name('banned');
 
