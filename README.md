@@ -3,6 +3,8 @@
 - Unlimited category and subcategory
 - Unlimited product variations
 - Multiple product images
+- Unlimited theme color options
+- User system: Administrators - Members - Blocked
 
 In the public folder:
 - Brand
