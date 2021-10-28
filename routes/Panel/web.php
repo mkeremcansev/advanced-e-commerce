@@ -30,6 +30,29 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
         //Logout route
         Route::get('/logout', [\App\Http\Controllers\Panel\LoginController::class, 'logout'])->name('logout');
 
+        //Admins route
+        Route::get('/admins', function () {
+            return view('Panel.admins');
+        })->name('admins');
+
+        Route::get('/admin-to-user/{id}', [\App\Http\Controllers\Panel\UserController::class, 'user'])->name('admin-to-user.update');
+
+        //Users route
+        Route::get('/users', function () {
+            return view('Panel.users');
+        })->name('users');
+
+        Route::get('/user-to-admin/{id}', [\App\Http\Controllers\Panel\UserController::class, 'admin'])->name('user-to-admin.update');
+
+        Route::get('/banned/{id}', [\App\Http\Controllers\Panel\UserController::class, 'banned'])->name('banned');
+
+        //Blockeds route
+        Route::get('/blockeds', function () {
+            return view('Panel.blockeds');
+        })->name('blockeds');
+
+        Route::get('/unbanned/{id}', [\App\Http\Controllers\Panel\UserController::class, 'unbanned'])->name('unbanned');
+
         //Category route
         Route::get('/category-add', function () {
             return view('Panel.Create.category');

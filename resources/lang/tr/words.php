@@ -74,9 +74,19 @@ return [
     'happy-customer' => 'Sorunsuz Teslimat ve Mutlu Müşteri',
     'cash-on-security' => 'Güvenli ve Sorunsuz Ödeme Garantisi',
     'new-products' => 'Yenİ Ürünler',
+    'admin' => 'Yönetici',
+    'user' => 'Kullanıcı',
+    'banned' => 'Engelle',
     'admin-panel' => 'Yönetim Paneli',
     'admin-login-alert' => 'Eğer bu sayfa hakkında bir bilginiz yok ise lütfen sayfayı kapatınız.',
-
+    'admin-list' => 'Yönetici Listesi',
+    'user-list' => 'Kullanıcı Listesi',
+    'banned-list' => 'Engelli Hesap Listesi',
+    'user-update-success' => 'Kullanıcı güncelleme işlemi başarıyla gerçekleşti.',
+    'admin-update-success' => 'Yönetici güncelleme işlemi başarıyla gerçekleşti.',
+    'user-banned-success' => 'Kullanıcı engelleme işlemi başarıyla gerçekleşti.',
+    'unbanned' => 'Engeli Kaldır',
+    'unbanned-user-update-success' => 'Engel Kaldırma işlemi başarıyla gerçekleşti.',
 
 
     'hello-user' => 'Merhaba, :name !',

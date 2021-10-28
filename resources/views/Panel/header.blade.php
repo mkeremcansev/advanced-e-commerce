@@ -454,42 +454,46 @@
                         </li>
 
                         <li class="dropdown nav-item" data-menu="dropdown">
-                            <a
-                                class="
-                                    dropdown-toggle
-                                    nav-link
-                                    d-flex
-                                    align-items-center
-                                "
-                                data-toggle="dropdown"
-                                ><i data-feather="activity"></i
-                                ><span>@lang('words.campaign')</span></a
-                            >
+                            <a class=" dropdown-toggle nav-link d-flex align-items-center"
+                                data-toggle="dropdown"><i data-feather="activity"></i>
+                                <span>
+                                    @lang('words.campaign')
+                                </span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a
-                                        class="
-                                            dropdown-item
-                                            d-flex
-                                            align-items-center
-                                        "
-                                        href="{{ route('Panel.campaign.add') }}"
-                                        data-toggle="dropdown"
-                                    >
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.campaign.add') }}" data-toggle="dropdown">
                                         <i data-feather="chevrons-right"></i>
                                         <span>@lang('words.campaign-add')</span>
                                     </a>
-                                    <a
-                                        class="
-                                            dropdown-item
-                                            d-flex
-                                            align-items-center
-                                        "
-                                        href="{{ route('Panel.campaigns') }}"
-                                        data-toggle="dropdown"
-                                    >
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.campaigns') }}" data-toggle="dropdown">
                                         <i data-feather="chevrons-right"></i>
                                         <span>@lang('words.campaign-list')</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown nav-item" data-menu="dropdown">
+                            <a class=" dropdown-toggle nav-link d-flex align-items-center"
+                                data-toggle="dropdown"><i data-feather="user"></i>
+                                <span>
+                                    @lang('words.user')
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.admins') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.admin-list')</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.users') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.user-list')</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.blockeds') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.banned-list')</span>
                                     </a>
                                 </li>
                             </ul>

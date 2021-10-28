@@ -10,6 +10,7 @@ use App\Models\Opportunity;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
 class ViewSharePovider extends ServiceProvider
@@ -34,6 +35,9 @@ class ViewSharePovider extends ServiceProvider
         if (!$this->app->runningInConsole()) {
             view()->share('subs', Category::with('children')->orderBy('id', 'ASC')->get());
             view()->share('categorys', Category::where('parent_id', 0)->with('children')->orderBy('id', 'ASC')->get());
+            view()->share('users', User::where('status', 0)->orderBy('id', 'DESC')->get());
+            view()->share('admins', User::where('status', 1)->orderBy('id', 'DESC')->get());
+            view()->share('blockeds', User::where('status', 2)->orderBy('id', 'DESC')->get());
             view()->share('services', Service::orderBy('id', 'DESC')->get());
             view()->share('products', Product::orderBy('id', 'DESC')->get());
             view()->share('brands', Brand::orderBy('id', 'DESC')->get());
