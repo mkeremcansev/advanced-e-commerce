@@ -173,6 +173,9 @@ $('#add-compare').on('click', function(){
                                         </div>
                                     </div>
                                     <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+                                     <div class="product_sort_info font-xs mb-30">
+                                        <img width="100" src="{{ asset($single->getBrand->image) }}" alt="">
+                                    </div>
                                     <div class="product_sort_info font-xs mb-30">
                                         <ul>
                                             <li class="mb-10"><i class="fi-rs-heart mr-5"></i> @lang('words.happy-customer')</li>

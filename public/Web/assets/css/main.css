@@ -7561,7 +7561,7 @@ span.fi-rs-apps {
 }
 
 .newsletter {
-  background-color: #fde1bd;
+  background-color: var(--product--btn--bg--color);
 }
 
 .newsletter .icon-email {
