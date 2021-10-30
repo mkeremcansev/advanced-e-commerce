@@ -46,8 +46,8 @@ $(document).ready(function () {
     $("#login").on("click",function(e){
         e.preventDefault()
         var formData = new FormData();
-        formData.append("login_email", $("#login_email").val());
-        formData.append("login_password", $("#login_password").val());
+        formData.append("email", $("#login_email").val());
+        formData.append("password", $("#login_password").val());
         formData.append("login", "login");
         $.ajax({
             type: 'POST',

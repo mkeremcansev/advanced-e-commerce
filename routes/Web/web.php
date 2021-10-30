@@ -10,6 +10,7 @@ Route::name('Web.')->middleware('User')->group(function () {
         return view('Web.Layouts.Account.account');
     })->name('account');
     Route::post('/account-update', [\App\Http\Controllers\Web\AccountController::class, 'put'])->name('Account.update');
+    Route::post('/review-add', [\App\Http\Controllers\Web\ReviewController::class, 'create'])->name('Review.add');
 });
 
 Route::name('Web.')->middleware('UserIsLogin')->group(function () {

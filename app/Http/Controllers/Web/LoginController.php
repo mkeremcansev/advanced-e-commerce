@@ -12,23 +12,23 @@ class LoginController extends Controller
     {
         $request->validate(
             [
-                'login_email' => 'required|min:3|max:30',
-                'login_password' => 'required|min:8|max:20',
+                'email' => 'required|min:3|max:30',
+                'password' => 'required|min:8|max:20',
             ],
             [
-                'login_email.required' => __('words.email-required'),
-                'login_email.min' => __('words.email-min', ['min' => ':min']),
-                'login_email.max' => __('keywwordsords.email-max', ['max' => ':max']),
+                'email.required' => __('words.email-required'),
+                'email.min' => __('words.email-min', ['min' => ':min']),
+                'email.max' => __('keywwordsords.email-max', ['max' => ':max']),
 
-                'login_password.required' => __('words.password-required'),
-                'login_password.min' => __('words.password-min', ['min' => ':min']),
-                'login_password.max' => __('words.password-max', ['max' => ':max']),
+                'password.required' => __('words.password-required'),
+                'password.min' => __('words.password-min', ['min' => ':min']),
+                'password.max' => __('words.password-max', ['max' => ':max']),
             ]
         );
 
         $credentials = [
-            'email' => $request->login_email,
-            'password' => $request->login_password,
+            'email' => $request->email,
+            'password' => $request->password,
             'status' => 0
         ];
 

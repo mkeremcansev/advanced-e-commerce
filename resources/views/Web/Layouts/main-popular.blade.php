@@ -22,7 +22,7 @@
                             <div class="product-content-wrap">
                                 <h2><a href="{{ route('Web.product.single', $product->slug) }}">{{ $product->title }}</a></h2>
                                 <div class="product-rate d-inline-block">
-                                    <div class="product-rating" style="width:40%">
+                                    <div class="product-rating" style="width:{{ $product->getProductReviews->avg('rating')*20 }}%">
                                     </div>
                                 </div>
                                 <div class="product-price">

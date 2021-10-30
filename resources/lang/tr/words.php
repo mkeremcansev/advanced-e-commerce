@@ -66,6 +66,17 @@ return [
     'cart-empty' => 'Sepetinizde ürün bulunmamaktadır.',
     'wishlist-empty' => 'Favorilerinizde ürün bulunmamaktadır.',
     'compare-empty' => 'Karşılaştırma listenizde ürün bulunmamaktadır.',
+
+    'review-product-required' => 'Ürün alanı zorunludur.',
+    'review-rating-required' => 'Ürün Değerlendirme alanı zorunludur.',
+    'review-review-required' => 'Ürün Yorum alanı zorunludur.',
+    'review-review-max' => 'Ürün Yorum alanı en fazla :max karakter olmalıdır.',
+    'review-review-min' => 'Ürün Yorum alanı en az :min karakter olmalıdır.',
+    'review-review-placeholder' => 'Ürün hakkındaki yorumlarınızı buraya yazabilirsiniz.',
+    'review' => 'Yorum',
+    'review-user-not-success' => 'Ürün`e ait yorumunuz bulunuyor.',
+
+
     'my-cart' => 'Sepetim',
     'my-favorite' => 'Favorilerim',
     'my-compare' => 'Karşılaştırmalarım',
@@ -101,7 +112,10 @@ return [
     'account-update-success' => 'Şifre güncellemesi başarıyla gerçekleşti.',
     'user-middleware-message' => 'Kullanıcı girişi gerekmektedir.',
     'admin-middleware-message' => 'Yönetici girişi gerekmektedir.',
-
+    'star-to-star' => ':go yıldız üzerinden ortalama :to yıldız',
+    'add-a-review' => 'Yorum yap',
+    'not-review-auth' => 'Yorum yapabilmek için giriş yapmalısınız.',
+    'review-add-success' => 'Yorum yapma işlemi başarıyla gerçekleşti.',
 
     //general words
     'general-settings' => 'Genel Ayarlar',
