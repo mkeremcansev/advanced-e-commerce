@@ -66,6 +66,7 @@ return [
     'cart-empty' => 'Sepetinizde ürün bulunmamaktadır.',
     'wishlist-empty' => 'Favorilerinizde ürün bulunmamaktadır.',
     'compare-empty' => 'Karşılaştırma listenizde ürün bulunmamaktadır.',
+    'all-see' => 'Tümünü Gör',
 
     'review-product-required' => 'Ürün alanı zorunludur.',
     'review-rating-required' => 'Ürün Değerlendirme alanı zorunludur.',

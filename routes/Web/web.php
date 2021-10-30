@@ -55,6 +55,7 @@ Route::name('Web.')->group(
 
         //Account route
         Route::get('/category/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'category'])->name('category.products');
+        Route::get('/campaign/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'campaign'])->name('campaign.products');
         Route::get('/product/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'single'])->name('product.single');
     }
 );

@@ -12,7 +12,7 @@
                         <img src="{{ asset($campaign->image) }}" alt="">
                         <div class="banner-text">
                             <h4 class="mt-5">{{ $campaign->title }}</h4>
-                            <a href="shop-grid-right.html" class="text-white">Tümünü gör <i class="fi-rs-arrow-right color-white"></i></a>
+                            <a href="{{ route('Web.campaign.products', $campaign->slug) }}" class="text-white">@lang('words.all-see')<i class="fi-rs-arrow-right color-white"></i></a>
                         </div>
                     </div>
                 </div>
