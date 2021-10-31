@@ -81,7 +81,7 @@
                                         <ul>
                                             @if (Auth::check() && Auth::user()->status == false)
                                                 <li>
-                                                    <a class="canseworksFontWeight" href="{{ route('Web.account') }}">@lang('words.my-account')</a>
+                                                    <a class="canseworksFontWeight" href="{{ route('Web.Account') }}">@lang('words.my-account')</a>
                                                 </li>
                                                 <li>
                                                     <a class="canseworksFontWeight" href="{{ route('Web.Logout.add') }}">@lang('words.logout')</a>

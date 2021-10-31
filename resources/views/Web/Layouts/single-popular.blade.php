@@ -21,7 +21,7 @@
             </div>
             
             <div class="product-rate">
-                <div class="product-rating" style="width:60%"></div>
+                <div class="product-rating" style="width:{{ $popular->getProductReviews->avg('rating')*20 }}%"></div>
             </div>
         </div>
     </div>

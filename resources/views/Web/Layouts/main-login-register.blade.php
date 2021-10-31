@@ -66,7 +66,7 @@ $(document).ready(function () {
                         message: data.message
                     });
                     setTimeout(function () {
-                        window.location.href = '{{ route("Web.account") }}'
+                        window.location.href = '{{ route("Web.Account") }}'
                     }, 1500)
                     
                 } else if(data.status == 201) {

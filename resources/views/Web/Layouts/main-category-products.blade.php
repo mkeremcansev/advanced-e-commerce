@@ -5,6 +5,7 @@
 @section('script')
 <script>
     $(document).ready(function () {
+        $('.shop-product-fillter-header').hide();
         $('.add-wishlist-cw').on('click', function(){
             let thisItem = $(this);
             let product = thisItem.attr('wishlist-hash');
@@ -72,50 +73,29 @@
     <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
-                    @if ($products->count() > false)
-                        <div class="col-lg-12">
-                            <div class="shop-product-fillter">
-                                <div class="sort-by-product-area">
-                                    <div class="sort-by-cover mr-10">
-                                        <div class="sort-by-product-wrap">
-                                            <div class="sort-by">
-                                                <span><i class="fi-rs-apps"></i>Show:</span>
-                                            </div>
-                                            <div class="sort-by-dropdown-wrap">
-                                                <span> 50 <i class="fi-rs-angle-small-down"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="sort-by-dropdown">
-                                            <ul>
-                                                <li><a class="active" href="#">50</a></li>
-                                                <li><a href="#">100</a></li>
-                                                <li><a href="#">150</a></li>
-                                                <li><a href="#">200</a></li>
-                                                <li><a href="#">All</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="sort-by-cover">
-                                        <div class="sort-by-product-wrap">
-                                            <div class="sort-by">
-                                                <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
-                                            </div>
-                                            <div class="sort-by-dropdown-wrap">
-                                                <span> Featured <i class="fi-rs-angle-small-down"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="sort-by-dropdown">
-                                            <ul>
-                                                <li><a class="active" href="#">Featured</a></li>
-                                                <li><a href="#">Price: Low to High</a></li>
-                                                <li><a href="#">Price: High to Low</a></li>
-                                                <li><a href="#">Release Date</a></li>
-                                                <li><a href="#">Avg. Rating</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                    <div class="col-lg-4 mb-15">
+                        <a class="shop-filter-toogle cwFWB">
+                            <span class="fi-rs-filter mr-5"></span>
+                            @lang('words.filter')
+                            <i class="fi-rs-angle-small-down angle-down"></i>
+                            <i class="fi-rs-angle-small-up angle-up"></i>
+                        </a>
+                        <div class="shop-product-fillter-header">
+                            <div class="row">
+                                <h5 class="mb-20">@lang('words.price')</h5>
+                                <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                    <input type="text" class="form-control" placeholder="@lang('words.least')">
                                 </div>
+                                <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                    <input type="text" class="form-control" placeholder="@lang('words.most')">
+                                </div>
+                                
                             </div>
+                                <a class="button button-add-to-cart hover-up col-lg-12 cwWidth100 mt-15 text-center">@lang('words.filter-go')</a>
+                        </div>
+                    </div>
+                    @if ($products->count() > false)
+                    <div class="col-lg-12">
                         <div class="row product-grid-3">
                             @foreach ($products as $product)
                                 <div class="col-lg-3 col-md-4 col-12 col-sm-6">

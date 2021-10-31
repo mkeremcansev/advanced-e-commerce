@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,5 +34,11 @@ class AccountController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
         return response()->json(['success' => 'Hesap güncelleme başarılı awk']);
+    }
+
+    public function account()
+    {
+        $reviews = Review::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        return view('Web.Layouts.Account.account', compact('reviews'));
     }
 }

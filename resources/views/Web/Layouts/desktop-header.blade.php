@@ -35,7 +35,7 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 @if (Auth::check() && Auth::user()->status == false)
-                                    <a href="{{ route('Web.account') }}">
+                                    <a href="{{ route('Web.Account') }}">
                                         <i class="fi-rs-user"></i>
                                     </a>
                                 @elseif(Auth::check() && Auth::user()->status == true)

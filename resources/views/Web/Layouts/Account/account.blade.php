@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="dashboard-menu">
                                     <ul class="nav flex-column" role="tablist">
                                         <li class="nav-item">
@@ -65,6 +65,11 @@
                                             <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="true">
+                                                <i class="fi-rs-comment mr-10"></i>@lang('words.my-reviews')
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="{{ route('Web.Logout.add') }}">
                                                 <i class="fi-rs-sign-out mr-10"></i>@lang('words.logout')
                                             </a>
@@ -72,7 +77,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                                 <div class="tab-content dashboard-content">
                                     <div class="tab-pane fade active show cw-mt-2" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                                         <div class="card">
@@ -80,7 +85,8 @@
                                                 <h5 class="mb-0">@lang('words.hello-user', ['name'=>Auth::user()->name])</h5>
                                             </div>
                                             <div class="card-body">
-                                                <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a href="#">edit your password and account details.</a></p>
+                                                <span class="cwFWB">@lang('words.user-not-verify-message')</span>
+                                                <button type="button" class="button button-add-to-cart hover-up">@lang('words.send-verify-code')</button>
                                             </div>
                                         </div>
                                     </div>
@@ -190,6 +196,61 @@
                                                         <p>Sarasota</p>
                                                         <a href="#" class="btn-small">Edit</a>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade cw-mt-2" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">@lang('words.my-reviews')</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>@lang('words.review-title')</th>
+                                                                <th>@lang('words.date')</th>
+                                                                <th>@lang('words.status')</th>
+                                                                <th>@lang('words.rating')</th>
+                                                                <th>@lang('words.actions')</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach ($reviews->take(5) as $review)
+                                                            <tr>
+                                                                <td>{{ maxCaharacter($review->title,30) }}</td>
+                                                                <td>{{ $review->created_at->diffForHumans() }}</td>
+                                                                <td>
+                                                                    @if ($review->status == 1)
+                                                                       <span class="text-success cwFWB">@lang('words.active')</span>
+                                                                    @else
+                                                                       <span class="text-danger cwFWB">@lang('words.passive')</span>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    <div class="product-rate d-inline-block">
+                                                                        <div class="product-rating" style="width:{{ $review->rating*20 }}%">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    @if ($review->status == 1)
+                                                                    <a target="_blank" href="{{ route('Web.product.single', $review->getReviewProduct->slug) }}" class="btn-small d-block cwMainTextColor cwFWB">
+                                                                        @lang('words.view')
+                                                                    </a>
+                                                                    @else
+                                                                    <a href="" class="btn-small d-block cwDisabled cwMainTextColor">
+                                                                        @lang('words.view')
+                                                                    </a>
+                                                                    @endif
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>

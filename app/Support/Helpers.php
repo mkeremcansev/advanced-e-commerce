@@ -63,3 +63,9 @@ function replaceFormat($data)
     $return = str_replace(',', '.', $data);
     return $return;
 }
+
+function maxCaharacter($string, $value)
+{
+    $data = substr($string, 0, $value) . "...";
+    return $data;
+}

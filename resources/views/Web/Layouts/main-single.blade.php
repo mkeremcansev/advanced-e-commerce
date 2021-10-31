@@ -124,6 +124,7 @@ $('#add-review').on('click', function(){
     let btnId = $('#add-review');
     let rating = $('.star:checked').val();
     let review = $('#review').val();
+    let deleteDivClass = $('.comment-form');
     btnId.addClass('cwDisabled')
     $.ajax({
         type: 'POST',
@@ -136,13 +137,13 @@ $('#add-review').on('click', function(){
             $('#review').val("")
             $('#review').attr("placeholder", "")
             setTimeout(function() {
+                deleteDivClass.slideUp(400,function() {
+					deleteDivClass.remove();
+				});
                 iziToast.success({
                     message: data.message
                 });
             }, 1000)
-            setTimeout(function(){
-                location.reload()
-            }, 2000)
             } else if(data.status == 201){
                 setTimeout(function () {
                     btnId.removeClass('cwDisabled')

@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::name('Web.')->middleware('User')->group(function () {
-    Route::get('/account', function () {
-        return view('Web.Layouts.Account.account');
-    })->name('account');
+    // Route::get('/account', function () {
+    //     return view('Web.Layouts.Account.account');
+    // })->name('account');
+    Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('Account');
     Route::post('/account-update', [\App\Http\Controllers\Web\AccountController::class, 'put'])->name('Account.update');
     Route::post('/review-add', [\App\Http\Controllers\Web\ReviewController::class, 'create'])->name('Review.add');
 });
@@ -53,7 +54,7 @@ Route::name('Web.')->group(
         Route::post('/login', [\App\Http\Controllers\Web\LoginController::class, 'login'])->name('Login.add');
         Route::get('/logout', [\App\Http\Controllers\Web\LoginController::class, 'logout'])->name('Logout.add');
 
-        //Account route
+        //Product route
         Route::get('/category/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'category'])->name('category.products');
         Route::get('/campaign/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'campaign'])->name('campaign.products');
         Route::get('/product/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'single'])->name('product.single');

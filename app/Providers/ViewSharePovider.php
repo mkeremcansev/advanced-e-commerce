@@ -8,10 +8,12 @@ use App\Models\Campaign;
 use App\Models\Category;
 use App\Models\Opportunity;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Theme;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class ViewSharePovider extends ServiceProvider
