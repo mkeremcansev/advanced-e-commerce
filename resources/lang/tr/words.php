@@ -77,7 +77,10 @@ return [
     'date' => 'Tarih',
     'rating' => 'Değerlendirme',
     'user-not-verify-message' => 'Hesabınız henüz doğrulanmamış.',
+    'user-yes-verify-message' => 'Hesabınız doğrulanmış.',
     'send-verify-code' => 'Doğrulama kodu gönder',
+    'verify-success' => 'Hesap doğrulama işlemi başarıyla gerçekleşti.',
+    'verify-error' => 'Hesap doğrulama işlemi başarısız.',
 
     'review-product-required' => 'Ürün alanı zorunludur.',
     'review-rating-required' => 'Ürün Değerlendirme alanı zorunludur.',
@@ -87,6 +90,8 @@ return [
     'review-review-placeholder' => 'Ürün hakkındaki yorumlarınızı buraya yazabilirsiniz.',
     'review' => 'Yorum',
     'review-user-not-success' => 'Ürün`e ait yorumunuz bulunuyor.',
+    'account-verification' => 'Hesap Doğrulama',
+    'verification-button' => 'Hesabını Doğrula',
 
 
     'my-cart' => 'Sepetim',
@@ -115,8 +120,20 @@ return [
     'category-not-product' => 'Kategoriye ait ürün bulunmamaktadır.',
     'primary-color' => 'Ana Renk',
     'secondary-color' => 'Ara Renk',
+    'total-product' => 'Toplam Ürün',
+    'total-category' => 'Toplam Kategori',
+    'total-review' => 'Toplam Değerlendirme',
+    'total-user' => 'Toplam Kullanıcı',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 
-    'hello-user' => 'Merhaba, :name !',
+    'hello-user' => 'Merhaba, :name.',
+    'hello' => 'Merhaba',
+    'verify-warn' => 'Soru ve sorunlarınız için',
+    'verify-warn-to' => 'adresinden bize e-posta gönderebilirsiniz. Teşekkürler',
+    'verify-desc' => 'üyelik kaydınız başarıyla oluşturulmuştur. Hesabınızın aktif olabilmesi için aşağıdaki aktivasyon bağlantısını tıklayınız veya bağlantı adresini kopyalayıp tarayıcınızın adres kısmına yapıştırarak işlemi tamamlayınız.',
     'logout' => 'Çıkış Yap',
     'my-info' => 'Bilgilerim',
     'my-order' => 'Siparişlerim',
@@ -128,6 +145,11 @@ return [
     'add-a-review' => 'Yorum yap',
     'not-review-auth' => 'Yorum yapabilmek için giriş yapmalısınız.',
     'review-add-success' => 'Yorum yapma işlemi başarıyla gerçekleşti.',
+    'verify-email-success' => 'Doğrulama kodu gönderme işlemi başarıyla gerçekleşti.',
+    'verify-email-messagge-send' => 'Doğrulama kodu gönderilmiş.',
+    'old-verify-message-send' => 'Doğrulama kodu gönderme işlemi başarısız.',
+    'welcome-user' => 'Seni tekrardan aramızda görmekten mutluluk duyuyoruz. Dilediğin ürünü sepete ekleyip sipariş verebilirsin.',
+    'start-shopping' => 'Alışverişe Başla',
 
     //general words
     'general-settings' => 'Genel Ayarlar',

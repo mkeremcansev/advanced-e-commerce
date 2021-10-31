@@ -2140,10 +2140,6 @@ input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-o
   padding-left : 2.4rem;
 }
 
-.card-statistics .statistics-body {
-  padding : 2rem 2.4rem 2.8rem !important;
-}
-
 .card-statistics .statistics-body .avatar .avatar-content {
   width : 48px;
   height : 48px;

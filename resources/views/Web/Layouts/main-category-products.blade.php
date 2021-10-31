@@ -73,6 +73,7 @@
     <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
+                    @if ($products->count() > false)
                     <div class="col-lg-4 mb-15">
                         <a class="shop-filter-toogle cwFWB">
                             <span class="fi-rs-filter mr-5"></span>
@@ -94,7 +95,6 @@
                                 <a class="button button-add-to-cart hover-up col-lg-12 cwWidth100 mt-15 text-center">@lang('words.filter-go')</a>
                         </div>
                     </div>
-                    @if ($products->count() > false)
                     <div class="col-lg-12">
                         <div class="row product-grid-3">
                             @foreach ($products as $product)

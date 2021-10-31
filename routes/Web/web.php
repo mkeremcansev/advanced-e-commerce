@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-
 Route::name('Web.')->middleware('User')->group(function () {
     // Route::get('/account', function () {
     //     return view('Web.Layouts.Account.account');
@@ -12,7 +11,10 @@ Route::name('Web.')->middleware('User')->group(function () {
     Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('Account');
     Route::post('/account-update', [\App\Http\Controllers\Web\AccountController::class, 'put'])->name('Account.update');
     Route::post('/review-add', [\App\Http\Controllers\Web\ReviewController::class, 'create'])->name('Review.add');
+    Route::get('/verify', [\App\Http\Controllers\Web\AccountController::class, 'verify'])->name('Account.verify');
+    Route::get('/verification/{code}', [\App\Http\Controllers\Web\AccountController::class, 'verification'])->name('Account.verification');
 });
+
 
 Route::name('Web.')->middleware('UserIsLogin')->group(function () {
     Route::get('/login-register', function () {

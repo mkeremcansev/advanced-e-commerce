@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Verification;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class AccountController extends Controller
 {
@@ -40,5 +43,27 @@ class AccountController extends Controller
     {
         $reviews = Review::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
         return view('Web.Layouts.Account.account', compact('reviews'));
+    }
+
+    public function verify()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->send = true;
+        $user->save();
+        Mail::to(Auth::user()->email)->send(new Verification(Auth::user()->verification));
+        return response()->json(['success' => __('words.verify-email-success')]);
+    }
+
+    public function verification($code)
+    {
+        $user = User::where('verification', $code)->first();
+        if ($user && $user->verify == false && $user->id == Auth::user()->id) {
+            $user->verify = true;
+            $user->verification = Str::random(20);
+            $user->save();
+            return redirect()->route('Web.Account')->with('success', __('words.verify-success'));
+        } else {
+            return redirect()->route('Web.Account')->with('error', __('words.verify-error'));
+        }
     }
 }

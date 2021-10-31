@@ -43,6 +43,8 @@ class ViewSharePovider extends ServiceProvider
             view()->share('blockeds', User::where('status', 2)->orderBy('id', 'DESC')->get());
             view()->share('services', Service::orderBy('id', 'DESC')->get());
             view()->share('products', Product::orderBy('id', 'DESC')->get());
+            view()->share('users', User::orderBy('id', 'DESC')->get());
+            view()->share('reviews', Review::orderBy('id', 'DESC')->get());
             view()->share('brands', Brand::orderBy('id', 'DESC')->get());
             view()->share('opportunitys', Opportunity::orderBy('id', 'DESC')->get());
             view()->share('settings', Setting::where('id', 1)->first());

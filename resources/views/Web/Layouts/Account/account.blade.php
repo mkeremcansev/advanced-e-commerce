@@ -33,8 +33,44 @@
                     },
                 });
             })
+            $('#verify').on('click', function () {
+                let deleteDivClass = $('.user-info-area');
+                $('#verify').addClass('cwDisabled');
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route("Web.Account.verify") }}',
+                    dataType: 'json',
+                    success: function (data) {
+                        setTimeout(function () {
+                            iziToast.success({
+                                message: data.success
+                            });
+                            deleteDivClass.slideUp(400,function() {
+                                deleteDivClass.remove();
+                            });
+                        },1000)
+                        
+                    },
+                    error: function (data) {
+                        console.log('@lang("words.error")')
+                    },
+                });
+            })
         });
     </script>
+@if ($message = Session::get('success'))
+    <script>
+        iziToast.success({
+            message: "{{ $message }}"
+        });
+    </script>
+@elseif ($message = Session::get('error'))
+    <script>
+        iziToast.error({
+            message: "{{ $message }}"
+        });
+    </script>
+@endif
 @endsection
 @section('content')
 <main class="main">
@@ -84,9 +120,17 @@
                                             <div class="card-header">
                                                 <h5 class="mb-0">@lang('words.hello-user', ['name'=>Auth::user()->name])</h5>
                                             </div>
-                                            <div class="card-body">
-                                                <span class="cwFWB">@lang('words.user-not-verify-message')</span>
-                                                <button type="button" class="button button-add-to-cart hover-up">@lang('words.send-verify-code')</button>
+                                            <div class="card-body user-info-area">
+                                                @if (Auth::user()->verify == 1 && Auth::user()->send == 1)
+                                                    <span class="cwFWB">@lang('words.welcome-user')</span>
+                                                    <a href="{{ route('Web.main') }}" class="button button-add-to-cart hover-up mt-15 cwItemCenter">@lang('words.start-shopping')</a>
+                                                @elseif(Auth::user()->verify == 0 && Auth::user()->send == 1)
+                                                    <span class="cwFWB text-warning">@lang('words.verify-email-messagge-send')</span>
+                                                @else
+                                                    <span class="cwFWB text-danger">@lang('words.user-not-verify-message')</span>
+                                                    <button id="verify" type="button" class="button button-add-to-cart hover-up">@lang('words.send-verify-code')</button>
+                                                @endif
+                                                
                                             </div>
                                         </div>
                                     </div>
