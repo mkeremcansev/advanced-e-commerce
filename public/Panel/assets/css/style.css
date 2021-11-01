@@ -31,5 +31,16 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 }
 
 .cw-rating-color {
-	color: orange;
+	color: orange !important;
+}
+
+.cw-red-color-1{
+	color: #EA5455 !important;
+}
+.cw-green-color-1{
+	color: #28C76F !important;
+}
+
+.cw-fwb-1{
+	font-weight: bold !important;
 }

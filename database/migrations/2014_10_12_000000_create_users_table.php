@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->boolean('verify')->default(0);
             $table->boolean('send')->default(0);
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

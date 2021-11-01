@@ -52,7 +52,7 @@ $(document).ready(function () {
                                         <label for="name">@lang('words.announcement-title')</label>
                                         <input type="text" class="form-control" id="title">
                                     </div>
-                                <button type="button" id="add" class="btn btn-primary waves-effect waves-float waves-light mt-2 mb-2 float-right">@lang('words.save')</button>
+                                    <button type="button" id="add" class="btn btn-primary waves-effect waves-float waves-light mt-2 mb-2 float-right">@lang('words.save')</button>
                                 </div>
                             </form>
                         </div>

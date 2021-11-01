@@ -51,10 +51,12 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
             return view('Panel.Review.passive');
         })->name('Passive.reviews');
         Route::get('/review-status/{id}', [\App\Http\Controllers\Panel\ReviewController::class, 'status'])->name('Status.review');
+
         //Users route
         Route::get('/members', function () {
             return view('Panel.members');
         })->name('members');
+        Route::get('/user/{id}', [\App\Http\Controllers\Panel\UserController::class, 'detail'])->name('User.detail');
 
         Route::get('/member-to-admin/{id}', [\App\Http\Controllers\Panel\UserController::class, 'admin'])->name('member-to-admin.update');
 

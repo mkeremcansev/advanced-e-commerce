@@ -25,6 +25,10 @@ class User extends Authenticatable
         'verify',
     ];
 
+    function getUserReviews()
+    {
+        return $this->hasMany(Review::class, 'user_id', 'id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

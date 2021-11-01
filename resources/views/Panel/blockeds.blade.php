@@ -44,7 +44,7 @@
                                         @foreach ($blockeds as $block)
                                         <tr>
                                             <td></td>
-                                            <td>{{ $block->name }}</td>
+                                            <td><a href="{{ route('Panel.User.detail', $block->id) }}">{{ $block->name }}</a></td>
                                             <td>{{ $block->phone }}</td>
                                             <td>{{ $block->email }}</td>
                                             <td>

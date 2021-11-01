@@ -39,4 +39,10 @@ class UserController extends Controller
         $user->save();
         return back()->with('success', __('words.unbanned-user-update-success'));
     }
+
+    public function detail($id)
+    {
+        $user = User::where('id', $id)->first() ?? abort(404);
+        return view('Panel.User.user', compact('user'));
+    }
 }

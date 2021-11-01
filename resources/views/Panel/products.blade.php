@@ -80,16 +80,14 @@
                                                 </li>
                                                 @endforeach
                                                 @else
-                                                <h5 style="color: #EA5455;">@lang('words.product-stock-not')</h5>
+                                                <h5 class="cw-red-color-1 cw-fwb-1">@lang('words.product-stock-not')</h5>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if ($product->status == '1')
-                                                <span
-                                                    style="color: #28C76F; font-weight:bold;">@lang('words.active')</span>
+                                                <span class="cw-green-color-1 cw-fwb-1">@lang('words.active')</span>
                                                 @else
-                                                <span
-                                                    style="color: #EA5455; font-weight:bold;">@lang('words.passive')</span>
+                                                <span class="cw-red-color-1 cw-fwb-1">@lang('words.passive')</span>
                                                 @endif
                                             </td>
                                             <td>

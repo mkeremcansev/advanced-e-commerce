@@ -44,7 +44,7 @@
                                         @foreach ($admins as $admin)
                                         <tr>
                                             <td></td>
-                                            <td>{{ $admin->name }}</td>
+                                            <td><a href="{{ route('Panel.User.detail', $admin->id) }}">{{ $admin->name }}</a></td>
                                             <td>{{ $admin->phone }}</td>
                                             <td>{{ $admin->email }}</td>
                                             <td>
