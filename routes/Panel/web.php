@@ -43,6 +43,14 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
 
         Route::get('/admin-to-member/{id}', [\App\Http\Controllers\Panel\UserController::class, 'member'])->name('admin-to-member.update');
 
+        //Active review route
+        Route::get('/active-reviews', function () {
+            return view('Panel.Review.active');
+        })->name('Active.reviews');
+        Route::get('/passive-reviews', function () {
+            return view('Panel.Review.passive');
+        })->name('Passive.reviews');
+        Route::get('/review-status/{id}', [\App\Http\Controllers\Panel\ReviewController::class, 'status'])->name('Status.review');
         //Users route
         Route::get('/members', function () {
             return view('Panel.members');

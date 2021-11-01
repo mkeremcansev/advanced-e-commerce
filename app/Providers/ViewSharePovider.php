@@ -56,6 +56,8 @@ class ViewSharePovider extends ServiceProvider
             view()->share('_categorys', Category::orderBy('id', 'ASC')->get());
             view()->share('_opportunitys', Opportunity::where('status', 1)->orderBy('id', 'DESC')->get());
             view()->share('_category', Category::where('parent_id', '!=', 0)->inRandomOrder()->limit(4)->get());
+            view()->share('_reviews', Review::where('status', 1)->orderBy('id', 'DESC')->get());
+            view()->share('reviews_', Review::where('status', 0)->orderBy('id', 'DESC')->get());
         }
     }
 }

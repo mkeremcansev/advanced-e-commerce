@@ -124,9 +124,9 @@ return [
     'total-category' => 'Toplam Kategori',
     'total-review' => 'Toplam Değerlendirme',
     'total-user' => 'Toplam Kullanıcı',
-    '' => '',
-    '' => '',
-    '' => '',
+    'active-review-list' => 'Aktif Yorum Listesi',
+    'passive-review-list' => 'Pasif Yorum Listesi',
+    'review-status-success' => 'Yorum durum güncelleme işlemi başarıyla gerçekleşti.',
     '' => '',
 
     'hello-user' => 'Merhaba, :name.',

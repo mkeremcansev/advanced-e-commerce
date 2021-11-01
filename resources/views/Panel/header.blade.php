@@ -497,6 +497,27 @@
                             </ul>
                         </li>
 
+                        <li class="dropdown nav-item" data-menu="dropdown">
+                            <a class=" dropdown-toggle nav-link d-flex align-items-center"
+                                data-toggle="dropdown"><i data-feather="refresh-cw"></i>
+                                <span>
+                                    @lang('words.review')
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.Active.reviews') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.active-review-list')</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.Passive.reviews') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.passive-review-list')</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
                             <a
                                 target="_blank"
