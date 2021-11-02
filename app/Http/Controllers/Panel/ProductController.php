@@ -68,8 +68,7 @@ class ProductController extends Controller
     {
         $variant = Variant::where('product_id', $id)->count();
         $campaign = CampaignValue::where('product_id', $id)->count();
-        $opportunity = Opportunity::where('product_id', $id)->count();
-        if ($campaign || $opportunity || $variant) {
+        if ($campaign || $variant) {
             return back()->with('error', __('words.product-value-yes'));
         } else {
             Product::where('id', $id)->delete();

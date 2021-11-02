@@ -26,8 +26,9 @@ class ProductController extends Controller
         return view('Web.Layouts.main-category-products', ['products' => $products, 'category' => $category->title]);
     }
 
-    public function campaign($slug)
+    public function campaign(Request $request, $slug)
     {
+
         $campaign = Campaign::where('slug', $slug)->first() ?? abort(404);
         $values = CampaignValue::where('campaign_id', $campaign->id)->paginate(4)->onEachSide(0);
         return view('Web.Layouts.main-campaign-products', ['values' => $values, 'campaign' => $campaign]);

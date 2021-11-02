@@ -81,7 +81,7 @@
                             <i class="fi-rs-angle-small-down angle-down"></i>
                             <i class="fi-rs-angle-small-up angle-up"></i>
                         </a>
-                         <form action="{{ route('Web.campaign.products',$campaign->slug) }}" method="GET">
+                         <form action="" method="GET">
                             <div class="shop-product-fillter-header">
                                 <div class="row">
                                     <h5 class="mb-20">@lang('words.price')</h5>
