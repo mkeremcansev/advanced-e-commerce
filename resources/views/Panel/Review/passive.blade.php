@@ -42,7 +42,7 @@
                                         <tr>
                                             <td></td>
                                             <td>{{ $review->title }}</td>
-                                            <td>{{ $review->getReviewUser->name }}</td>
+                                            <td><a href="{{ route('Panel.User.detail', $review->getReviewUser->id) }}">{{ $review->getReviewUser->name }}</a></td>
                                             <td><a target="_blank" href="{{ route('Web.product.single', $review->getReviewProduct->slug) }}">{{ $review->getReviewProduct->title }}</a></td>
                                             <td>
                                                 @if ($review->rating == 1)

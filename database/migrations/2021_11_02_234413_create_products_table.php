@@ -19,14 +19,16 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->longText('description');
             $table->string('hash');
-            $table->string('price');
-            $table->string('discount')->default(0);
-            $table->string('category_id');
-            $table->string('brand_id');
+            $table->float('price');
+            $table->float('discount')->default(0);
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('brand_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('brand_id')->references('id')->on('brands');
             $table->longText('images');
             $table->string('code');
-            $table->string('status');
-            $table->string('hit');
+            $table->integer('status');
+            $table->integer('hit');
             $table->timestamps();
         });
     }

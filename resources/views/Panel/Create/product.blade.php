@@ -6,6 +6,7 @@
 <script>
     $(document).ready(function(){
     $('#add').click(function(){
+        $("#add").attr("disabled", true)
         var formData = new FormData();
         var totalfiles = document.getElementById('images').files.length;
         for (var index = 0; index < totalfiles; index++) {
@@ -36,6 +37,7 @@
                 }, 1000)
             },
             error: function (data) {
+                $("#add").attr("disabled", false)
                 toastr.error('',  validateItem(data), { positionClass: "toast-bottom-right" })
             },
         });

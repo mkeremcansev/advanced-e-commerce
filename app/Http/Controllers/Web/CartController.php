@@ -17,13 +17,14 @@ class CartController extends Controller
             [
                 'data' => 'required',
                 'product' => 'required',
-                'quantity' => 'required|integer',
+                'quantity' => 'required|integer|min:1',
             ],
             [
                 'data.required' => __('words.cart-product-selected'),
                 'product.required' => __('words.cart-product-required'),
                 'quantity.required' => __('words.cart-quantity-required'),
-                'quantity.integer' => __('words.cart-quantity-integer')
+                'quantity.integer' => __('words.cart-quantity-integer'),
+                'quantity.min' => __('words.cart-quantity-min', ['min' => ':min']),
             ]
         );
         $product = Product::where('hash', $request->product)->first();

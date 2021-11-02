@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function single($slug)
     {
-        $single = Product::where('slug', $slug)->first() ?? abort(404);
+        $single = Product::where('slug', $slug)->where('status', 1)->first() ?? abort(404);
         $single->increment('hit', 1);
         $single->save();
         return view('Web.Layouts.main-single', compact('single'));
@@ -22,14 +22,14 @@ class ProductController extends Controller
     public function category($slug)
     {
         $category = Category::where('slug', $slug)->first() ?? abort(404);
-        $products = Product::where('category_id', $category->id)->paginate(12)->onEachSide(0);
+        $products = Product::where('category_id', $category->id)->where('status', 1)->paginate(4)->onEachSide(0);
         return view('Web.Layouts.main-category-products', ['products' => $products, 'category' => $category->title]);
     }
 
     public function campaign($slug)
     {
         $campaign = Campaign::where('slug', $slug)->first() ?? abort(404);
-        $values = CampaignValue::where('campaign_id', $campaign->id)->paginate(12)->onEachSide(0);
-        return view('Web.Layouts.main-campaign-products', ['values' => $values, 'title' => $campaign->title]);
+        $values = CampaignValue::where('campaign_id', $campaign->id)->paginate(4)->onEachSide(0);
+        return view('Web.Layouts.main-campaign-products', ['values' => $values, 'campaign' => $campaign]);
     }
 }

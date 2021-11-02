@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVariantValuesTable extends Migration
+class CreateCampaignsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateVariantValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('variant_values', function (Blueprint $table) {
+        Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
-            $table->string('product_id');
-            $table->string('variant_id');
             $table->string('title');
-            $table->string('stock');
-            $table->string('price');
-            $table->string('hash');
+            $table->string('slug');
+            $table->string('image');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateVariantValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('variant_values');
+        Schema::dropIfExists('campaigns');
     }
 }

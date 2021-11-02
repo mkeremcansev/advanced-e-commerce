@@ -58,6 +58,7 @@ return [
     'cart-product-required' => 'Ürün alanı zorunludur.',
     'cart-quantity-required' => 'Ürün Adet alanı zorunludur.',
     'cart-quantity-integer' => 'Ürün Adet alanı sayısal ifade olmalıdır.',
+    'cart-quantity-min' => 'Ürün Adet alanı en az :min adet olmalıdır.',
     'product-quantity' => 'Ürün Adet',
     'total-price' => 'Toplam Fiyat',
     'cart-destroy-success' => 'Sepet temizleme işlemi başarıyla gerçekleşti.',

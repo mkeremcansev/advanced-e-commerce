@@ -15,8 +15,10 @@ class CreateCampaignValuesTable extends Migration
     {
         Schema::create('campaign_values', function (Blueprint $table) {
             $table->id();
-            $table->string('campaign_id');
-            $table->string('product_id');
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

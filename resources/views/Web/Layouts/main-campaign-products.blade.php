@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }} | {{ $title }}
+{{ $settings->title }} | {{ $campaign->title }}
 @endsection
 @section('script')
 <script>
@@ -81,19 +81,20 @@
                             <i class="fi-rs-angle-small-down angle-down"></i>
                             <i class="fi-rs-angle-small-up angle-up"></i>
                         </a>
-                        <div class="shop-product-fillter-header">
-                            <div class="row">
-                                <h5 class="mb-20">@lang('words.price')</h5>
-                                <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
-                                    <input type="text" class="form-control" placeholder="@lang('words.least')">
+                         <form action="{{ route('Web.campaign.products',$campaign->slug) }}" method="GET">
+                            <div class="shop-product-fillter-header">
+                                <div class="row">
+                                    <h5 class="mb-20">@lang('words.price')</h5>
+                                    <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                        <input type="text" class="form-control" name="min" placeholder="@lang('words.least')">
+                                    </div>
+                                    <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                        <input type="text" class="form-control" name="max" placeholder="@lang('words.most')">
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-4 mb-lg-0 mb-md-5 mb-sm-5">
-                                    <input type="text" class="form-control" placeholder="@lang('words.most')">
-                                </div>
-                                
+                                <button type="submit" class="button button-add-to-cart hover-up col-lg-12 cwWidth100 mt-15 text-center">@lang('words.filter-go')</button>
                             </div>
-                                <a class="button button-add-to-cart hover-up col-lg-12 cwWidth100 mt-15 text-center">@lang('words.filter-go')</a>
-                        </div>
+                        </form>
                     </div>
                     <div class="col-lg-12">
                         <div class="row product-grid-3">
