@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }} - @lang('words.my-favorite')
+{{ setting('title') }} | @lang('words.my-favorite')
 @endsection
 @section('script')
 @if ($message = Session::get('success'))

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>{{ $settings->title }} | @lang('words.login')</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset($settings->favicon) }}">
+    <title>{{ setting('title') }} | @lang('words.login')</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset(setting('favicon')) }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('Panel/app-assets/vendors/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('Panel/app-assets/css/bootstrap.css') }}">
@@ -34,7 +34,7 @@
                 <div class="auth-wrapper auth-v2">
                     <div class="auth-inner row m-0">
                         <a class="brand-logo" href="javascript:void(0);">
-                            <h2 class="brand-text text-primary ml-1">{{ $settings->title }}</h2>
+                            <h2 class="brand-text text-primary ml-1">{{ setting('title') }}</h2>
                         </a>
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
                             <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{ asset('Panel/app-assets/images/pages/cwapp.png') }}" alt="Login V2" /></div>

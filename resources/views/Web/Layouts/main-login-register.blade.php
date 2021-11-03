@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }} - @lang('words.login') - @lang('words.register')
+{{ setting('title') }} | @lang('words.login') - @lang('words.register')
 @endsection
 @section('script')
 <script>

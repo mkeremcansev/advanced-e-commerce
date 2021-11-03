@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset($settings->favicon) }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset(setting('favicon')) }}">
     <link rel="stylesheet" href="{{ asset('Web/assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('Web/assets/css/iziToast.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,9 +29,9 @@
                         <div class="header-info">
                             <ul>
                                 <li><i class="fi-rs-smartphone"></i> <a
-                                        href="tel://{{ $settings->phone }}">{{ $settings->phone }}</a>
+                                        href="tel://{{ setting('phone') }}">{{ setting('phone') }}</a>
                                 </li>
-                                <li><i class="fi-rs-marker"></i>{{ $settings->adress }}</li>
+                                <li><i class="fi-rs-marker"></i>{{ setting('adress') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="{{ route('Web.main') }}"><img src="{{ asset($settings->logo) }}" alt="{{ $settings->title }}"></a>
+                        <a href="{{ route('Web.main') }}"><img src="{{ asset(setting('logo')) }}" alt="{{ setting('title') }}"></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-2">

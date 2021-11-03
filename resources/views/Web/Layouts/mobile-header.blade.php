@@ -2,7 +2,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="{{ route('Web.main') }}"><img src="{{ asset($settings->logo) }}" alt="logo"></a>
+                <a href="{{ route('Web.main') }}"><img src="{{ asset(setting('logo')) }}" alt="logo"></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
@@ -21,21 +21,6 @@
             <div class="mobile-menu-wrap mobile-header-border">
                 <nav>
                     <ul class="mobile-menu">
-                        {{-- @foreach (Cache::get('categorys') as $category)
-                            @if (count($category->subCategories))
-                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                        href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                                    <ul class="dropdown">
-                                        @include('Web.Category.mobile', ['children'=>$category->subCategories])
-                                    </ul>
-                                </li>
-                            @else
-                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                        href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                                </li>
-                            @endif
-                        @endforeach --}}
-                        {{-- @include('Web.Category.general', ['status'=>2]) --}}
                         {!! Cache::get('mCategories') !!}
                     </ul>
                 </nav>

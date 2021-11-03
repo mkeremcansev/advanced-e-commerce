@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }} - @lang('words.my-compare')
+{{ setting('title') }} | @lang('words.my-compare')
 @endsection
 @section('script')
 @if ($message = Session::get('success'))

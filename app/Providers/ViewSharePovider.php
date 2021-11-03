@@ -45,8 +45,6 @@ class ViewSharePovider extends ServiceProvider
             view()->share('users', User::orderBy('id', 'DESC')->get());
             view()->share('reviews', Review::orderBy('id', 'DESC')->get());
             view()->share('brands', Brand::orderBy('id', 'DESC')->get());
-            view()->share('settings', Setting::where('id', 1)->first());
-            view()->share('themes', Theme::where('id', 1)->first());
             view()->share('announcements', Announcement::orderBy('id', 'DESC')->get());
             view()->share('campaigns', Campaign::with('getCampaignValue')->orderBy('id', 'DESC')->get());
             view()->share('_products', Product::with('getProductReviews')->where('status', 1)->orderBy('id', 'DESC')->get()); // Wen new populars

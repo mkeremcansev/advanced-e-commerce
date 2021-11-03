@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }} - @lang('words.my-cart')
+{{ setting('title') }} | @lang('words.my-cart')
 @endsection
 @section('script')
 <script>

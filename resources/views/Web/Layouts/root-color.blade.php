@@ -1,7 +1,7 @@
 <style>
     :root {
-        --main--project--color: {{ $themes->primary }};
-        --product--btn--border--color : {{ $themes->primary }};
-        --product--btn--bg--color : {{ $themes->secondary }};
+        --main--project--color: {{ setting('primary') }};
+        --product--btn--border--color : {{ setting('primary') }};
+        --product--btn--bg--color : {{ setting('secondary') }};
     }
 </style>

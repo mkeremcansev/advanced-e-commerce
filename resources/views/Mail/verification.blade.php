@@ -6,7 +6,7 @@
 							<div style="background:white;border-radius:8px;margin-bottom:8px">
 								<h2 style="color:#e34930;line-height:30px;margin-bottom:12px;margin:0 0 12px"><span style="color:#424243">@lang('words.hello')</span></h2>
 								<p style="font-size:17px;line-height:24px;margin:0 0 16px">
-									{{ $settings->title }} @lang('words.verify-desc')
+									{{ setting('title') }} @lang('words.verify-desc')
 								</p>
 								<table style="border-collapse:collapse;width:100%">
 									<tbody>
@@ -22,7 +22,7 @@
 									</tbody>
 								</table>
 								<p style="font-size:17px;line-height:24px;margin:0 0 16px">
-									@lang('words.verify-warn') <a href="mailto:{{ $settings->mail }}" style="color:#439fe0;font-weight:bold;text-decoration:none;word-break:break-word" target="_blank">{{ $settings->mail }}</a> @lang('words.verify-warn-to')
+									@lang('words.verify-warn') <a href="mailto:{{ setting('mail') }}" style="color:#439fe0;font-weight:bold;text-decoration:none;word-break:break-word" target="_blank">{{ setting('mail') }}</a> @lang('words.verify-warn-to')
 								</p>
 							</div>
 						</div>

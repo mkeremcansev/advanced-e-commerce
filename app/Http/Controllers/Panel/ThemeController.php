@@ -20,10 +20,11 @@ class ThemeController extends Controller
                 'secondary.required' => __('words.theme-secondary-required')
             ]
         );
-
-        $theme = Theme::findOrFail(1);
-        $theme->fill($request->all());
-        $theme->save();
+        $data = [
+            'primary' => $request->primary,
+            'secondary' => $request->secondary,
+        ];
+        setting($data)->save();
         return response()->json(['success' => __('words.theme-update-success')]);
     }
 }

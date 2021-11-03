@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use App\Support\Helper;
 use Illuminate\Http\Request;
+use anlutro\LaravelSettings\SettingStore;
 
 class SettingController extends Controller
 {
     public function put(Request $request)
     {
-        $fill = $request->validate(
+        $request->validate(
             [
                 'title' => 'required|min:3|max:20',
                 'description' => 'required|min:10|max:250',
@@ -79,15 +80,27 @@ class SettingController extends Controller
                 'favicon.max' => __('words.favicon-max', ['max' => ':max']),
             ]
         );
-        $setting = Setting::findOrFail(1);
-        $setting->fill($fill);
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'footer' => $request->footer,
+            'keywords' => $request->keywords,
+            'adress' => $request->adress,
+            'map' => $request->map,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'twitter' => $request->twitter,
+            'mail' => $request->mail,
+            'whatsapp' => $request->whatsapp,
+            'phone' => $request->phone,
+        ];
         if ($request->hasFile('logo')) {
-            $setting->logo = Helper::imageUpload($request->file('logo'), 'Logo', $setting->logo);
+            $data['logo'] = Helper::imageUpload($request->file('logo'), 'Logo', setting('logo'));
         }
         if ($request->hasFile('favicon')) {
-            $setting->favicon = Helper::imageUpload($request->file('favicon'), 'Favicon', $setting->favicon);
+            $data['favicon'] = Helper::imageUpload($request->file('favicon'), 'Favicon', setting('favicon'));
         }
-        $setting->save();
+        setting($data)->save();
         return back()->with('success', __('words.setting-success-message'));
     }
 }

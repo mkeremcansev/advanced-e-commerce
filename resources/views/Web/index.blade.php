@@ -1,6 +1,6 @@
 @extends('Web.main')
 @section('title')
-{{ $settings->title }}
+{{ setting('title') }}
 @endsection
 @section('script')
 <script>

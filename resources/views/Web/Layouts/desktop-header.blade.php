@@ -2,33 +2,12 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative  main-nav">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="{{ route('Web.main') }}"><img src="{{ asset($settings->logo) }}" alt="logo"></a>
+                        <a href="{{ route('Web.main') }}"><img src="{{ asset(setting('logo')) }}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block zIndexCanseworks">
                             <nav>
                                 <ul>
-
-                                    {{-- @foreach (Cache::get('categorys') as $category)
-                                        @if (count($category->subCategories))
-                                        <li>
-                                            <ul class="dropdown-c">
-                                                <li>
-                                                    <a class="cwCategoryFontSize85" href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                                                    <ul>
-                                                        @include('Web.Category.category', ['children'=>$category->subCategories])
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            @else
-                                            <ul class="dropdown-c">
-                                                <li>
-                                                    <a class="cwCategoryFontSize85" href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                                                </li>
-                                            </ul>
-                                        @endif
-                                    @endforeach --}}
-                                    {{-- @include('Web.Category.general', ['status'=>1]) --}}
                                     {!! Cache::get('dCategories') !!}
                                 </ul>
                             </nav>

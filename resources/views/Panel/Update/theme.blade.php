@@ -52,11 +52,11 @@ $(document).ready(function () {
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="color">@lang('words.primary-color')</label>
-                                       <input id="primary" class="form-control" value="{{ $themes->primary }}"/>
+                                       <input id="primary" class="form-control" value="{{ setting('primary') }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="color">@lang('words.secondary-color')</label>
-                                       <input id="secondary" class="form-control" value="{{ $themes->secondary }}"/>
+                                       <input id="secondary" class="form-control" value="{{ setting('secondary') }}"/>
                                     </div>
                                     <button type="button" id="update" class="btn btn-primary waves-effect waves-float waves-light mt-2 mb-2 float-right">@lang('words.save')</button>
                                 </div>

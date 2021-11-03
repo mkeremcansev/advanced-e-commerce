@@ -31,21 +31,21 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widget-about font-md mb-md-5 mb-lg-0">
                         <div class="logo logo-width-1 wow fadeIn animated">
-                            <a href="index.html"><img src="{{ asset($settings->logo) }}" alt="logo"></a>
+                            <a href="index.html"><img src="{{ asset(setting('logo')) }}" alt="logo"></a>
                         </div>
                         <p class="wow fadeIn animated mt-2">
-                            <strong>@lang('words.adress') : </strong>{{ $settings->adress }}
+                            <strong>@lang('words.adress') : </strong>{{ setting('adress') }}
                         </p>
                         <p class="wow fadeIn animated">
-                            <strong>@lang('words.phone') : </strong>{{ $settings->phone }}
+                            <strong>@lang('words.phone') : </strong>{{ setting('phone') }}
                         </p>
                         <p class="wow fadeIn animated">
-                            <strong>@lang('words.email') : </strong>{{ $settings->mail }}
+                            <strong>@lang('words.email') : </strong>{{ setting('mail') }}
                         </p><br>
                         <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                            <a href="{{ $settings->facebook }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-facebook.svg') }}" alt="{{ $settings->facebook }}"></a>
-                            <a href="{{ $settings->twitter }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a>
-                            <a href="{{ $settings->instagram }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a>
+                            <a href="{{ setting('facebook') }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-facebook.svg') }}" alt="{{ setting('facebook') }}"></a>
+                            <a href="{{ setting('twitter') }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-twitter.svg') }}" alt="{{ setting('twitter') }}"></a>
+                            <a href="{{ setting('instagram') }}"><img src="{{ asset('Web/assets/imgs/theme/icons/icon-instagram.svg') }}" alt="{{ setting('instagram') }}"></a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
             </div>
             <div class="col-lg-12 text-center">
                 <p class="float-md-left font-sm text-muted mb-0">
-                    <strong class="text-brand">{{ $settings->footer }}</strong>
+                    <strong class="text-brand">{{ setting('footer') }}</strong>
                 </p>
             </div>
         </div>
