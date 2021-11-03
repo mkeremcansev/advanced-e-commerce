@@ -37,9 +37,6 @@ class ViewSharePovider extends ServiceProvider
     {
         if (!$this->app->runningInConsole()) {
             view()->share('subs', Category::with('subCategories')->orderBy('id', 'ASC')->get());
-            Cache::rememberForever('categorys', function () {
-                return view()->share('categorys', Category::where('parent_id', 0)->with('subCategories')->orderBy('id', 'ASC')->get());
-            });
             view()->share('members', User::where('status', 0)->orderBy('id', 'DESC')->get());
             view()->share('admins', User::where('status', 1)->orderBy('id', 'DESC')->get());
             view()->share('blockeds', User::where('status', 2)->orderBy('id', 'DESC')->get());

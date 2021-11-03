@@ -64,7 +64,7 @@ $(document).ready(function () {
                                             <label>@lang('words.main-menu')</label>
                                             <select class="select2 form-control" id="main">
                                                 @if ($category->parent_id == 0)
-                                                    <option value="0" disabled selected>@lang('words.not')</option>
+                                                    <option value="0" selected readonly>@lang('words.not')</option>
                                                 @else
                                                     @foreach ($subs as $sub)
                                                 <option {{ blockCategory($category->id, $sub->parent_id) }} @if ($category->parent_id == $sub->id) selected @elseif ($category->id == $sub->id) disabled   @endif value="{{ $sub->id }}">{{ App\Models\Category::getParentsTree($sub, $sub->title) }}</option>

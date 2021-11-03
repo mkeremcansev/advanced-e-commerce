@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function single($slug)
     {
-        $single = Product::where('slug', $slug)->where('status', 1)->with(['getProductReviews.getReviewUser', 'getVariant.getVariantValue', 'getBrand', 'getBrand'])->firstOrFail();
+        $single = Product::where('slug', $slug)->where('status', 1)->with(['getProductReviews.getReviewUser', 'getVariant.getVariantValue', 'getBrand'])->firstOrFail();
         $single->increment('hit', 1);
         $single->save();
         return view('Web.Layouts.main-single', compact('single'));

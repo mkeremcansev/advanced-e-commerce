@@ -16,33 +16,6 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, 'parent_id')->orderBy('id', 'ASC');
     }
-
-    protected function getsubCategoriesCacheKey()
-    {
-        return sprintf('category_%d', $this->id);
-    }
-
-    public function clearsubCategoriesCache()
-    {
-        return Cache::forget($this->getsubCategoriesCacheKey());
-    }
-
-    public function getsubCategoriesAttribute()
-    {
-        if ($this->relationLoaded('subCategories')) {
-            return $this->getRelationValue('subCategories');
-        }
-        $subCategories = Cache::rememberForever($this->getsubCategoriesCacheKey(), function () {
-            return $this->getRelationValue('subCategories');
-        });
-        $this->setRelation('subCategories', $subCategories);
-        return $subCategories;
-    }
-
-    public function children()
-    {
-        return $this->hasMany(Category::class, 'parent_id')->orderBy('id', 'ASC');
-    }
     public static function getParentsTree($category, $title)
     {
         if ($category->parent_id == 0) {

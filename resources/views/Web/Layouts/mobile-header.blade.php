@@ -35,7 +35,8 @@
                                 </li>
                             @endif
                         @endforeach --}}
-                        @include('Web.Category.general', ['status'=>2])
+                        {{-- @include('Web.Category.general', ['status'=>2]) --}}
+                        {!! Cache::get('mCategories') !!}
                     </ul>
                 </nav>
             </div>

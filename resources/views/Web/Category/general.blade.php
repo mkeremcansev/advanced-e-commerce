@@ -6,7 +6,7 @@
                     <li>
                         <a class="cwCategoryFontSize85" href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
                         <ul>
-                            @include('Web.Category.category', ['children'=>$category->subCategories])
+                            @include('Web.Category.category', ['children'=>$category->subCategories]) 
                         </ul>
                     </li>
                 </ul>

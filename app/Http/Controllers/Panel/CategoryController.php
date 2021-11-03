@@ -39,7 +39,8 @@ class CategoryController extends Controller
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }
         $category->save();
-        Cache::tags('subcategories')->flush();
+        Helper::desktop();
+        Helper::mobile();
         return response()->json(['success' => __('words.category-success')]);
     }
 
@@ -77,7 +78,8 @@ class CategoryController extends Controller
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }
         $category->save();
-        Cache::tags('subcategories')->flush();
+        Helper::desktop();
+        Helper::mobile();
         return response()->json(['success' => __('words.category-update-success')]);
     }
 
@@ -92,7 +94,8 @@ class CategoryController extends Controller
             return back()->with('error', __('words.category-product-error'));
         } else {
             Category::where('id', $id)->delete();
-            Cache::tags('subcategories')->flush();
+            Helper::desktop();
+            Helper::mobile();
             return back()->with('success', __('words.category-delete-success'));
         }
     }
