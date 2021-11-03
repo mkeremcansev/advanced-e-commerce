@@ -94,6 +94,7 @@ return [
     'review-product-required' => 'Ürün alanı zorunludur.',
     'review-rating-required' => 'Ürün Değerlendirme alanı zorunludur.',
     'review-review-required' => 'Ürün Yorum alanı zorunludur.',
+    'review-rating-integer' => 'Ürün Değerlendirme alanı sayısal ifade olmalıdır.',
     'review-review-max' => 'Ürün Yorum alanı en fazla :max karakter olmalıdır.',
     'review-review-min' => 'Ürün Yorum alanı en az :min karakter olmalıdır.',
     'review-review-placeholder' => 'Ürün hakkındaki yorumlarınızı buraya yazabilirsiniz.',

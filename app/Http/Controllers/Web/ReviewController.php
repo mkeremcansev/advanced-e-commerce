@@ -15,12 +15,13 @@ class ReviewController extends Controller
         $request->validate(
             [
                 'product' => 'required',
-                'rating' => 'required',
+                'rating' => 'required|integer',
                 'review' => 'required|min:50|max:250'
             ],
             [
                 'product.required' => __('words.review-product-required'),
                 'rating.required' => __('words.review-rating-required'),
+                'rating.integer' => __('words.review-rating-integer'),
                 'review.required' => __('words.review-review-required'),
                 'review.min' => __('words.review-review-min', ['min' => ':min']),
                 'review.max' => __('words.review-review-max', ['max' => ':max']),
