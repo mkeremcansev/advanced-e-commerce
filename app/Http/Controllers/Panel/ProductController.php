@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
 use App\Models\CampaignValue;
-use App\Models\Opportunity;
 use App\Models\Product;
 use App\Models\Variant;
 use Illuminate\Http\Request;
@@ -98,7 +97,7 @@ class ProductController extends Controller
 
     public function update($id)
     {
-        $product = Product::where('id', $id)->first() ?? abort(404);
+        $product = Product::where('id', $id)->firstOrfail();
         return view('Panel.Update.product', compact('product'));
     }
     public function put(Request $request, $id)

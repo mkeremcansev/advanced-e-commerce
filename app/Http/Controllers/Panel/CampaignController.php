@@ -37,7 +37,7 @@ class CampaignController extends Controller
     }
     public function value($id)
     {
-        $campaign = Campaign::where('id', $id)->first()  ?? abort(404);
+        $campaign = Campaign::where('id', $id)->firstOrfail();
         return view('Panel.Update.campaign', compact('campaign'));
     }
 
@@ -56,7 +56,7 @@ class CampaignController extends Controller
         );
         foreach ($request->products as $product) {
             $campaignValue = new CampaignValue;
-            $campaign = Campaign::where('id', $request->campaign_id)->first() ?? abort(404);
+            $campaign = Campaign::where('id', $request->campaign_id)->firstOrfail();
             $campaign->status = 1;
             $campaign->save();
             $campaignValue->campaign_id = $request->campaign_id;
@@ -68,7 +68,7 @@ class CampaignController extends Controller
 
     public function update($id)
     {
-        $campaign = Campaign::where('id', $id)->first() ?? abort(404);
+        $campaign = Campaign::where('id', $id)->firstOrfail();
         return view('Panel.Update.campaigns', compact('campaign'));
     }
 
@@ -97,7 +97,7 @@ class CampaignController extends Controller
 
     public function status($id, $status)
     {
-        $campaign = Campaign::where('id', $id)->first() ?? abort(404);
+        $campaign = Campaign::where('id', $id)->firstOrfail();
         $campaignValue = CampaignValue::where('campaign_id', $campaign->id)->count();
         if (!$campaignValue && $status == 1) {
             return back()->with('error', __('words.campaign-not-product'));
@@ -110,7 +110,7 @@ class CampaignController extends Controller
 
     public function delete($id)
     {
-        $campaign = Campaign::where('id', $id)->first() ?? abort(404);
+        $campaign = Campaign::where('id', $id)->firstOrfail();
         $campaignValue = CampaignValue::where('campaign_id', $campaign->id)->count();
         if ($campaignValue) {
             return back()->with('error', __('words.campaign-yes-product'));
@@ -122,10 +122,10 @@ class CampaignController extends Controller
 
     public function vdelete($id)
     {
-        $campaignValue = CampaignValue::where('id', $id)->first() ?? abort(404);
+        $campaignValue = CampaignValue::where('id', $id)->firstOrfail();
         $campaignValueCount = CampaignValue::where('campaign_id', $campaignValue->campaign_id)->count();
         if ($campaignValueCount == 1) {
-            $campaign = Campaign::where('id', $campaignValue->campaign_id)->first() ?? abort(404);
+            $campaign = Campaign::where('id', $campaignValue->campaign_id)->firstOrfail();
             $campaign->status = 0;
             $campaign->save();
             $campaignValue->delete();

@@ -18,7 +18,7 @@ $(document).ready(function () {
         }
         $.ajax({
             type: 'POST',
-            url: "route('Panel.Service.update', $service->id)",
+            url: "{{ route('Panel.Service.update', $service->id) }}",
             data: formData,
             dataType: 'json',
             cache: false,

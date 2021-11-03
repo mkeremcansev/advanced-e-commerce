@@ -12,4 +12,8 @@ class CampaignValue extends Model
     {
         return $this->hasOne(Product::class, 'id', 'product_id');
     }
+    function getCampaignValueProducts()
+    {
+        return $this->hasMany(Product::class, 'id', 'product_id');
+    }
 }

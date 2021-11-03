@@ -35,7 +35,7 @@ class ProductInformationController extends Controller
     }
     public function information($id)
     {
-        $product = Product::where('id', $id)->first()  ?? abort(404);
+        $product = Product::where('id', $id)->firstOrfail();
         return view('Panel.Update.information', compact('product'));
     }
     public function delete($id)

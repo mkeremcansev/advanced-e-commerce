@@ -10,7 +10,7 @@ class ReviewController extends Controller
 {
     public function status($id)
     {
-        $review = Review::where('id', $id)->first() ?? abort(404);
+        $review = Review::where('id', $id)->firstOrfail();
         if ($review->status == true) {
             $review->status = false;
         } else {

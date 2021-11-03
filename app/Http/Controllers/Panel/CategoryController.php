@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Support\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -37,12 +39,13 @@ class CategoryController extends Controller
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }
         $category->save();
+        Cache::tags('subcategories')->flush();
         return response()->json(['success' => __('words.category-success')]);
     }
 
     public function update($id)
     {
-        $category = Category::where('id', $id)->first() ?? abort(404);
+        $category = Category::where('id', $id)->firstOrfail();
         if ($category) {
             return view('Panel.Update.category', compact('category'));
         } else {
@@ -74,12 +77,13 @@ class CategoryController extends Controller
             $category->image = Helper::imageUpload($request->file('image'), 'Category', $category->image);
         }
         $category->save();
+        Cache::tags('subcategories')->flush();
         return response()->json(['success' => __('words.category-update-success')]);
     }
 
     public function delete($id)
     {
-        $requestCategory = Category::where('id', $id)->first() ?? abort(404);
+        $requestCategory = Category::where('id', $id)->firstOrfail();
         $parentCategory = Category::where('parent_id', $requestCategory->id)->count();
         $product = Product::where('category_id', $id)->count();
         if ($parentCategory) {
@@ -88,6 +92,7 @@ class CategoryController extends Controller
             return back()->with('error', __('words.category-product-error'));
         } else {
             Category::where('id', $id)->delete();
+            Cache::tags('subcategories')->flush();
             return back()->with('success', __('words.category-delete-success'));
         }
     }

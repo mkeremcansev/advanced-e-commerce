@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\ViewSharePovider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -232,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Support\Helper::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

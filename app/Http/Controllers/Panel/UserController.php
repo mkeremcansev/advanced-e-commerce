@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function member($id)
     {
-        $user = User::where('id', $id)->first() ?? abort(404);
+        $user = User::where('id', $id)->firstOrFail();
         $user->status = 0;
         $user->save();
         return back()->with('success', __('words.user-update-success'));
@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function admin($id)
     {
-        $user = User::where('id', $id)->first() ?? abort(404);
+        $user = User::where('id', $id)->firstOrFail();
         $user->status = 1;
         $user->save();
         return back()->with('success', __('words.admin-update-success'));
@@ -26,7 +26,7 @@ class UserController extends Controller
 
     public function banned($id)
     {
-        $user = User::where('id', $id)->first() ?? abort(404);
+        $user = User::where('id', $id)->firstOrFail();
         $user->status = 2;
         $user->save();
         return back()->with('success', __('words.user-banned-success'));
@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function unbanned($id)
     {
-        $user = User::where('id', $id)->first() ?? abort(404);
+        $user = User::where('id', $id)->firstOrFail();
         $user->status = 0;
         $user->save();
         return back()->with('success', __('words.unbanned-user-update-success'));
@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function detail($id)
     {
-        $user = User::where('id', $id)->first() ?? abort(404);
+        $user = User::where('id', $id)->with('getUserReviews.getReviewProduct')->firstOrFail();
         return view('Panel.User.user', compact('user'));
     }
 }

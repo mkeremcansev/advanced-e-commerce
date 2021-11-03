@@ -51,26 +51,26 @@ class VariantController extends Controller
             $value->price = $data['option_price'];
             $value->save();
         }
-        $product = Product::where('id', $request->product_id)->first() ?? abort(404);
+        $product = Product::where('id', $request->product_id)->firstOrfail();
         $product->status = 1;
         $product->save();
         return back()->with('success', __('words.variation-success'));
     }
     public function variant($id)
     {
-        $product = Product::where('id', $id)->first()  ?? abort(404);
+        $product = Product::where('id', $id)->firstOrfail();
         return view('Panel.Update.variant', compact('product'));
     }
     public function delete($id)
     {
-        $value = VariantValue::where('id', $id)->first() ?? abort(404);
+        $value = VariantValue::where('id', $id)->firstOrfail();
         $data = VariantValue::where('variant_id', $value->variant_id)->count();
         if ($data == 1) {
             Variant::where('id', $value->variant_id)->delete();
             VariantValue::where('id', $id)->delete();
             $products = VariantValue::where('product_id', $value->product_id)->count();
             if ($products < 1) {
-                $product = Product::where('id', $value->product_id)->first() ?? abort(404);
+                $product = Product::where('id', $value->product_id)->firstOrfail();
                 $product->status = 0;
                 $product->save();
             }
@@ -82,7 +82,7 @@ class VariantController extends Controller
     }
     public function update($id)
     {
-        $value = VariantValue::where('id', $id)->first() ?? abort(404);
+        $value = VariantValue::where('id', $id)->firstOrfail();
         return view('Panel.Update.value', compact('value'));
     }
     public function put(Request $request, $id)
@@ -105,11 +105,11 @@ class VariantController extends Controller
                 'option_price.integer' => __('words.variant-option_price-integer'),
             ]
         );
-        $value = VariantValue::where('id', $id)->first() ?? abort(404);
+        $value = VariantValue::where('id', $id)->firstOrfail();
         $value->title = $request->option_title;
         $value->stock = $request->option_stock;
         $value->price = $request->option_price;
-        $variant = Variant::where('id', $value->variant_id)->first()  ?? abort(404);
+        $variant = Variant::where('id', $value->variant_id)->firstOrfail();
         $variant->title = $request->title;
         $variant->save();
         $value->save();

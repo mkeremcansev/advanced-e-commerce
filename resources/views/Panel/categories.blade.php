@@ -63,27 +63,27 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">@lang('words.category-tree')</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div id="jstree-basic">
-                                        <ul>
-                                            @foreach ($categorys as $category)
-                                            <li data-jstree='{"icon" : "fa fa-plus"}'>
-                                                {{ $category->title }}
-                                                <ul>
-                                                    @if (count($category->children))
-                                                            @include('Panel.Category.category', ['children'=>$category->children])
-                                                    @endif
-                                                </ul>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">@lang('words.category-tree')</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="jstree-basic">
+                                    <ul>
+                                        @foreach (Cache::get('categorys') as $category)
+                                        <li data-jstree='{"icon" : "fa fa-plus"}'>
+                                            {{ $category->title }}
+                                            <ul>
+                                                @if (count($category->subCategories))
+                                                        @include('Panel.Category.category', ['children'=>$category->subCategories])
+                                                @endif
+                                            </ul>
+                                        </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </section>

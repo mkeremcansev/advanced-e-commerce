@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
                 $campaign->save();
             }
         }
-        //Campaign value control
+        // Campaign value control
         $values = CampaignValue::orderBy('id', 'desc')->get();
         foreach ($values as $value) {
             $product = Product::where('id', $value->product_id)->first();

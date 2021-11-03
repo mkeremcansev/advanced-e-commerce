@@ -193,7 +193,7 @@ $('#add-review').on('click', function(){
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12"> 
                                 <div class="detail-info">
                                     <h2 class="title-detail">{{ $single->title }}</h2>
                                     <div class="product-detail-rating">

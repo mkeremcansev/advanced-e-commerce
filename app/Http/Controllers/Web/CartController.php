@@ -41,7 +41,7 @@ class CartController extends Controller
             $newArray = [];
             $newKeys  = [];
             foreach ($request->data as $variant) {
-                $value = VariantValue::where('hash', $variant)->first() ?? abort(404);
+                $value = VariantValue::where('hash', $variant)->firstOrfail();
                 if ($value->price != 0) {
                     $price = $price + $value->price;
                 }

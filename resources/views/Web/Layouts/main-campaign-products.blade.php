@@ -98,41 +98,43 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row product-grid-3">
-                            @foreach ($values as $product)
-                                <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                    <div class="product-cart-wrap mb-30">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img product-img-zoom">
-                                                <a href="{{ route('Web.product.single', $product->getCampaignValueProduct->slug) }}">
-                                                    <img class="default-img" src="{{ asset(firstImage($product->getCampaignValueProduct->images)) }}" alt="{{ $product->slug }}">
-                                                    <img class="hover-img" src="{{ asset(twoImage($product->getCampaignValueProduct->images)) }}">
-                                                </a>
-                                            </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="@lang('words.add-to-wishlist')" wishlist-hash="{{ $product->getCampaignValueProduct->hash }}" class="action-btn hover-up add-wishlist-cw color-white"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="@lang('words.add-to-compare')" compare-hash="{{ $product->getCampaignValueProduct->hash }}" class="action-btn hover-up add-compare-cw color-white"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap">
-                                            <h2><a href="{{ route('Web.product.single', $product->getCampaignValueProduct->slug) }}">{{ $product->getCampaignValueProduct->title }}</a></h2>
-                                            <div class="product-rate d-inline-block">
-                                                    <div class="product-rating" style="width:{{ $product->getCampaignValueProduct->getProductReviews->avg('rating')*20 }}%">
-                                                    </div>
+                            @foreach ($values as $value)
+                                @foreach ($value->getCampaignValueProducts as $product)
+                                    <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                                        <div class="product-cart-wrap mb-30">
+                                            <div class="product-img-action-wrap">
+                                                <div class="product-img product-img-zoom">
+                                                    <a href="{{ route('Web.product.single', $product->slug) }}">
+                                                        <img class="default-img" src="{{ asset(firstImage($product->images)) }}" alt="{{ $product->slug }}">
+                                                        <img class="hover-img" src="{{ asset(twoImage($product->images)) }}">
+                                                    </a>
                                                 </div>
-                                            <div class="product-price">
-                                                @if ($product->getCampaignValueProduct->discount == 0)
-                                                    <span>{{ priceToFormat($product->getCampaignValueProduct->price) }} ₺</span>
-                                                @else
-                                                    <span>{{ priceToFormat($product->getCampaignValueProduct->discount) }} ₺</span><br>
-                                                    <span class="old-price mlCanseworks">{{ priceToFormat($product->getCampaignValueProduct->price) }} ₺</span>
-                                                @endif
+                                                <div class="product-action-1">
+                                                    <a aria-label="@lang('words.add-to-wishlist')" wishlist-hash="{{ $product->hash }}" class="action-btn hover-up add-wishlist-cw color-white"><i class="fi-rs-heart"></i></a>
+                                                    <a aria-label="@lang('words.add-to-compare')" compare-hash="{{ $product->hash }}" class="action-btn hover-up add-compare-cw color-white"><i class="fi-rs-shuffle"></i></a>
+                                                </div>
                                             </div>
-                                            <div class="product-action-1 show">
-                                                <a aria-label="@lang('words.detail')" class="action-btn hover-up" href="{{ route('Web.product.single', $product->getCampaignValueProduct->slug) }}"><i class="fi-rs-arrow-right color-white"></i></a>
+                                            <div class="product-content-wrap">
+                                                <h2><a href="{{ route('Web.product.single', $product->slug) }}">{{ $product->title }}</a></h2>
+                                                <div class="product-rate d-inline-block">
+                                                        <div class="product-rating" style="width:{{ $product->getProductReviews->avg('rating')*20 }}%">
+                                                        </div>
+                                                    </div>
+                                                <div class="product-price">
+                                                    @if ($product->discount == 0)
+                                                        <span>{{ priceToFormat($product->price) }} ₺</span>
+                                                    @else
+                                                        <span>{{ priceToFormat($product->discount) }} ₺</span><br>
+                                                        <span class="old-price mlCanseworks">{{ priceToFormat($product->price) }} ₺</span>
+                                                    @endif
+                                                </div>
+                                                <div class="product-action-1 show">
+                                                    <a aria-label="@lang('words.detail')" class="action-btn hover-up" href="{{ route('Web.product.single', $product->slug) }}"><i class="fi-rs-arrow-right color-white"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             @endforeach
                         </div>
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">

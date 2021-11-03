@@ -3,7 +3,7 @@
         <h5 class="widget-title mb-10">@lang('words.popular-products')</h5>
         <div class="bt-1 border-color-1"></div>
     </div>
-    @foreach ($_products->sortByDesc('hit')->take(5) as $popular)
+    @foreach ($_populars->take(5) as $popular)
         <div class="single-post clearfix">
         <div class="image">
             <img src="{{ asset(firstImage($popular->images)) }}" alt="{{ $popular->slug }}">

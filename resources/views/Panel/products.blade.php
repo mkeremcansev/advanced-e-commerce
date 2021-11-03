@@ -52,8 +52,7 @@
                                             <td></td>
                                             <td><img width="100" src="{{ asset(firstImage($product->images)) }}"></td>
                                             <td>{{ $product->title }}</td>
-                                            <td>{{ App\Models\Category::getParentsTree($product->getCategory, $product->getCategory->title) }}
-                                            </td>
+                                            <td>{{ App\Models\Category::getParentsTree($product->getCategory, $product->getCategory->title) }}</td>
                                             <td>{{ $product->getBrand->title }}</td>
                                             <td>{{ $product->code }}</td>
                                             <td>

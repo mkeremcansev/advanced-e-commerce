@@ -21,20 +21,21 @@
             <div class="mobile-menu-wrap mobile-header-border">
                 <nav>
                     <ul class="mobile-menu">
-                        @foreach ($categorys as $category)
-                        @if (count($category->children))
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                            <ul class="dropdown">
-                                @include('Web.Category.mobile', ['children'=>$category->children])
-                            </ul>
-                        </li>
-                        @else
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
-                        </li>
-                        @endif
-                        @endforeach
+                        {{-- @foreach (Cache::get('categorys') as $category)
+                            @if (count($category->subCategories))
+                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                        href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
+                                    <ul class="dropdown">
+                                        @include('Web.Category.mobile', ['children'=>$category->subCategories])
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                        href="{{ route('Web.category.products', $category->slug) }}">{{ $category->title }}</a>
+                                </li>
+                            @endif
+                        @endforeach --}}
+                        @include('Web.Category.general', ['status'=>2])
                     </ul>
                 </nav>
             </div>

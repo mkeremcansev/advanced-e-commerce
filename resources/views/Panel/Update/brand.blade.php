@@ -17,7 +17,7 @@ $(document).ready(function () {
         }
         $.ajax({
             type: 'POST',
-            url: "{{ route(Panel.'Brand.update', $brand->id) }}",
+            url: "{{ route('Panel.Brand.update', $brand->id) }}",
             data: formData,
             dataType: 'json',
             cache: false,
