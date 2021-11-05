@@ -3,7 +3,7 @@
         <ul class="pagination justify-content-center">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="page-item disabled" aria-disabled="true">
+                <li class="page-item cwDisabled" aria-disabled="true">
                     <span class="page-link" aria-hidden="true"><i class="fi-rs-angle-double-small-left"></i></span>
                 </li>
             @else
@@ -16,7 +16,7 @@
             @foreach ($elements as $element)
                 {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
-                    <li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
+                    <li class="page-item cwDisabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
                 @endif
 
                 {{-- Array Of Links --}}
@@ -37,7 +37,7 @@
                     <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"><i class="fi-rs-angle-double-small-right"></i></a>
                 </li>
             @else
-                <li class="page-item disabled" aria-disabled="true">
+                <li class="page-item cwDisabled" aria-disabled="true">
                     <span class="page-link" aria-hidden="true"><i class="fi-rs-angle-double-small-right"></i></span>
                 </li>
             @endif

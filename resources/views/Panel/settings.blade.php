@@ -18,13 +18,6 @@
 </script>
 @endforeach
 @endif
-<script>
-    $(document).ready(function () {
-    $('#service_color').spectrum({
-        type: "component"
-    });
-});
-</script>
 @endsection
 @section('content')
 <div class="app-content content ">

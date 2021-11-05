@@ -113,7 +113,7 @@ return [
     '30-day-return' => '30 Gün İçerisinde İade Garantisi',
     'happy-customer' => 'Sorunsuz Teslimat ve Mutlu Müşteri',
     'cash-on-security' => 'Güvenli ve Sorunsuz Ödeme Garantisi',
-    'new-products' => 'Yenİ Ürünler',
+    'new-products' => 'Yeni Ürünler',
     'admin' => 'Yönetici',
     'member' => 'Üye',
     'banned' => 'Engelle',
@@ -515,4 +515,19 @@ return [
     'not-null-discount-code' => 'İndirim Uygulandı',
     'discount-success' => 'İndirim Kodu başarıyla tanımlandı.',
     'discount-error' => 'İndirim Kodu tanımlama işlemi başarısız.',
+
+    'contracts' => 'Sözleşmeler',
+    'general' => 'Genel',
+
+    'account-contracts' => 'Üyelik Sözleşmesi',
+    'return-conditions' => 'İade Koşulları',
+    'distance-sales-agreement' => 'Mesafeli Satış Sözleşmesi',
+    'illumination-and-consent-text' => 'Aydınlatma ve Rıza Metni',
+    'privacy-policy' => 'Gizlilik Politikası',
+
+    'account-contracts-required' => 'Üyelik Sözleşmesi alanı zorunludur.',
+    'return-conditions-required' => 'İade Koşulları alanı zorunludur.',
+    'distance-sales-agreement-required' => 'Mesafeli Satış Sözleşmesi alanı zorunludur.',
+    'illumination-and-consent-text-required' => 'Aydınlatma ve Rıza Metni alanı zorunludur.',
+    'privacy-policy-required' => 'Gizlilik Politikası alanı zorunludur.',
 ];

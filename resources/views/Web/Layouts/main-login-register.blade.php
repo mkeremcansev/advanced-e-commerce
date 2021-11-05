@@ -152,7 +152,7 @@ $(document).ready(function () {
                                                 <div class="chek-form">
                                                     <div class="custome-checkbox">
                                                         <input class="form-check-input" type="checkbox" id="policy">
-                                                        <label class="form-check-label" for="policy"><a href="{{ route('Web.main') }}"><span>@lang('words.register-policy')</span></a></label>
+                                                        <label class="form-check-label" for="policy"><a href="{{ route('Web.Contract.account-contracts') }}"><span>@lang('words.register-policy')</span></a></label>
                                                     </div>
                                                 </div>
                                             </div>

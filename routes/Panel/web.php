@@ -27,6 +27,12 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
         })->name('settings');
         Route::post('/settings', [\App\Http\Controllers\Panel\SettingController::class, 'put'])->name('Setting.update');
 
+        //Contract route
+        Route::get('/contracts', function () {
+            return view('Panel.contracts');
+        })->name('contracts');
+        Route::post('/contracts', [\App\Http\Controllers\Panel\ContractController::class, 'contract'])->name('Contract.update');
+
         //Theme route
         Route::get('/theme', function () {
             return view('Panel.Update.theme');

@@ -221,7 +221,7 @@
                                 "
                                 data-toggle="dropdown"
                                 ><i data-feather="bar-chart-2"></i
-                                ><span>Genel </span></a
+                                ><span>@lang('words.general')</span></a
                             >
                             <ul class="dropdown-menu">
                                 <li>
@@ -234,6 +234,12 @@
                                     <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.theme') }}" data-toggle="dropdown">
                                         <i data-feather="chevrons-right"></i>
                                         <span>@lang('words.theme-settings')</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.contracts') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.contracts')</span>
                                     </a>
                                 </li>
                             </ul>
