@@ -5,7 +5,7 @@
                 <div class="col-lg-7 mb-md-3 mb-lg-0">
                     <div class="row align-items-center">
                         <div class="col flex-horizontal-center">
-                            <img class="icon-email" src="{{ asset('Web') }}/assets/imgs/theme/icons/icon-email.svg"
+                            <img class="icon-email" src="{{ asset('Web/assets/imgs/theme/icons/icon-email.svg') }}"
                                 alt="">
                             <h4 class="font-size-20 mb-0 ml-3">E-Bülten'e kayıt olun!</h4>
                         </div>
@@ -15,12 +15,10 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <!-- Subscribe Form -->
                     <form class="form-subcriber d-flex wow fadeIn animated">
                         <input type="email" class="form-control bg-white font-small" placeholder="@lang('words.email')">
                         <button class="btn bg-dark text-white col-lg-3" type="submit">Kayıt Ol</button>
                     </form>
-                    <!-- End Subscribe Form -->
                 </div>
             </div>
         </div>

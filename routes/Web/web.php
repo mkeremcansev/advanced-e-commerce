@@ -60,5 +60,7 @@ Route::name('Web.')->group(
         Route::get('/category/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'category'])->name('category.products');
         Route::get('/campaign/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'campaign'])->name('campaign.products');
         Route::get('/product/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'single'])->name('product.single');
+
+        Route::post('/coupon', [\App\Http\Controllers\Web\CouponController::class, 'create'])->name('Coupon.add');
     }
 );

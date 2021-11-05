@@ -58,7 +58,7 @@ class VariantController extends Controller
     }
     public function variant($id)
     {
-        $product = Product::where('id', $id)->firstOrfail();
+        $product = Product::where('id', $id)->with(['getVariant.getVariantValue', 'getCategory'])->firstOrfail();
         return view('Panel.Update.variant', compact('product'));
     }
     public function delete($id)

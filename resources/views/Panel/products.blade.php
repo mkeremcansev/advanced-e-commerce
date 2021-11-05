@@ -70,8 +70,7 @@
                                                     <h5>{{ $variant->title }}</h5>
                                                     @foreach ($variant->getVariantValue as $value)
                                                     @if ($value->stock == 0)
-                                                    <del
-                                                        style="color: #EA5455;">{{ $value->title }}({{ $value->stock }}),</del>
+                                                    <del class="cw-red-color-1">{{ $value->title }}({{ $value->stock }}),</del>
                                                     @else
                                                     <span>{{ $value->title }}({{ $value->stock }}),</span>
                                                     @endif

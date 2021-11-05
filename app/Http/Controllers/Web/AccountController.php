@@ -41,7 +41,7 @@ class AccountController extends Controller
 
     public function account()
     {
-        $reviews = Review::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->with('getReviewProduct')->get();
+        $reviews = Review::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->with('getReviewProduct')->get();
         return view('Web.Layouts.Account.account', compact('reviews'));
     }
 

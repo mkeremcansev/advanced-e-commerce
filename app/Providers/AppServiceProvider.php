@@ -26,19 +26,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //Campaign control
-        $campaigns = Campaign::orderBy('id', 'desc')->get();
+        $campaigns = Campaign::orderBy('id', 'DESC')->get();
         foreach ($campaigns as $campaign) {
-            if ($campaign->getCampaignValue->count() == false) {
-                $campaign->status = false;
+            if ($campaign->getCampaignValue->count() == 0) {
+                $campaign->status = 0;
                 $campaign->save();
             }
         }
-        // Campaign value control
-        $values = CampaignValue::orderBy('id', 'desc')->get();
+        $values = CampaignValue::orderBy('id', 'DESC')->get();
         foreach ($values as $value) {
             $product = Product::where('id', $value->product_id)->first();
-            if ($product->status == false) {
+            if ($product->status == 0) {
                 CampaignValue::where('id', $value->id)->delete();
             }
         }

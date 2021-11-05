@@ -49,9 +49,9 @@
                                     <h4 class="card-title"><a href="{{ route('Panel.Product.update.get', $product->id) }}">{{ $product->title }}<i data-feather="arrow-right"></i></a>
                                 
                                     @if ($product->status == "1")
-                                        <span style="color: #28C76F;"> @lang('words.active')</span>
+                                        <span class="cw-green-color-1"> @lang('words.active')</span>
                                     @else
-                                        <span style="color: #EA5455;"> @lang('words.passive')</span>
+                                        <span class="cw-red-color-1"> @lang('words.passive')</span>
                                     @endif
                                 </h4>
                                 <a href="{{ route('Panel.Variant.add.get', $product->id) }}" class="btn btn-success waves-effect waves-float waves-light">@lang('words.variation')</a>

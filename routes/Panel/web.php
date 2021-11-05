@@ -157,5 +157,17 @@ Route::prefix('admin')->middleware('Admin')->name('Panel.')->group(
         Route::get('/campaign-value-delete/{id}', [\App\Http\Controllers\Panel\CampaignController::class, 'vdelete'])->name('Campaign.value.delete');
         Route::get('/campaign-delete/{id}', [\App\Http\Controllers\Panel\CampaignController::class, 'delete'])->name('Campaign.delete');
         Route::get('/campaign-status/{id}/{status}', [\App\Http\Controllers\Panel\CampaignController::class, 'status'])->name('Campaign.status');
+
+        //Coupon route
+        Route::get('/coupon-add', function () {
+            return view('Panel.Create.coupon');
+        })->name('coupon.add');
+        Route::get('/coupon-list', function () {
+            return view('Panel.coupons');
+        })->name('coupons');
+        Route::post('/coupon-add', [\App\Http\Controllers\Panel\CouponController::class, 'create'])->name('Coupon.add');
+        Route::get('/coupon-update/{id}', [\App\Http\Controllers\Panel\CouponController::class, 'update'])->name('Coupon.update.get');
+        Route::post('/coupon-update/{id}', [\App\Http\Controllers\Panel\CouponController::class, 'put'])->name('Coupon.update');
+        Route::get('/coupon-delete/{id}', [\App\Http\Controllers\Panel\CouponController::class, 'delete'])->name('Coupon.delete');
     }
 );

@@ -38,6 +38,12 @@ $(document).ready(function () {
             message: "{{ $message }}"
         });
     </script>
+@elseif($message = Session::get('error'))
+    <script>
+        iziToast.error({
+            message: "{{ $message }}"
+        });
+    </script>
 @endif
 @endsection
 @section('content')
@@ -91,19 +97,46 @@ $(document).ready(function () {
                                                     <td class="cart_total_label">Vergi</td>
                                                     <td class="cart_total_amount tax"><span><i class="ti-gift mr-5"></i>%18 ( {{ replaceFormat(Cart::instance('cart')->tax()) }} ₺ )</span></td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="cart_total_label">Toplam</td>
-                                                    <td class="cart_total_amount total"><strong><span class="font-xl fw-900 text-brand">{{ replaceFormat(Cart::instance('cart')->total()) }} ₺</span></strong></td>
-                                                </tr>
+                                                @if (Session::get('coupon'))
+                                                    <tr>
+                                                        <td class="cart_total_label">Toplam</td>
+                                                            <td class="cart_total_amount total">
+                                                                <strong>
+                                                                    <span class="fw-900 text-brand">
+                                                                        <del>{{ replaceFormat(Cart::instance('cart')->total()) }} ₺</del>
+                                                                    </span>
+                                                                    <span class="font-xl fw-900 text-brand">
+                                                                        {{ priceToFormat(replaceFormatTwo(Cart::instance('cart')->total()) - Session::get('coupon')) }} ₺
+                                                                    </span>
+                                                                    <span class="fw-900 text-brand">
+                                                                        (@lang('words.discount') : {{ Session::get('coupon') }} ₺)
+                                                                    </span>
+                                                                </strong>
+                                                            </td>
+                                                    </tr>
+                                                @else
+                                                    <tr>
+                                                        <td class="cart_total_label">Toplam</td>
+                                                        <td class="cart_total_amount total"><strong><span class="font-xl fw-900 text-brand">{{ replaceFormat(Cart::instance('cart')->total()) }} ₺</span></strong></td>
+                                                    </tr>
+                                                @endif
+                                                
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="cart-action text-end">
-                                        <input class="font-medium col-lg-2 cwFloatLeft" name="Coupon" placeholder="Enter Your Coupon">
-                                        <a href="{{ route('Web.Cart.destroy') }}" class="btn mr-10 mb-sm-15 col-lg-2 cwCustomBtn"><i class="fi-rs-shuffle mr-10"></i>Update Cart</a>
-                                        <a href="{{ route('Web.Cart.destroy') }}" class="btn mr-10 mb-sm-15 col-lg-3 cwFontSize12"><i class="fi-rs-trash mr-10"></i>Temizle</a>
-                                        <a href="" class="btn col-lg-3 cwFontSize12"><i class="fi-rs-shopping-bag mr-10"></i>Alışverişi Tamamla</a>
-                                        
+                                        @if (Session::get('coupon'))
+                                        <input class="font-medium col-lg-2 cwFloatLeft" name="coupon" disabled placeholder="@lang('words.not-null-discount-code')">
+                                        <button class="btn mb-sm-15 col-lg-2 cwCustomBtn" disabled>@lang('words.update')</button>
+                                        @else
+                                            <form action="{{ route('Web.Coupon.add') }}" method="POST">
+                                                @csrf
+                                                <input class="font-medium col-lg-2 cwFloatLeft" name="coupon" placeholder="@lang('words.discount-code')">
+                                                <button type="submit" class="btn mr-10 mb-sm-15 col-lg-2 cwCustomBtn">@lang('words.update')</button>
+                                            </form>
+                                        @endif
+                                        <a href="{{ route('Web.Cart.destroy') }}" class="btn mb-sm-15 col-lg-2 cwFontSize12">@lang('words.clean')</a>
+                                        <a href="" class="btn col-lg-2 cwFontSize12">@lang('words.complete-shopping')</a>
                                     </div>
                                 </div>
                             </div>

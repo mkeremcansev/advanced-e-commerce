@@ -474,6 +474,27 @@
 
                         <li class="dropdown nav-item" data-menu="dropdown">
                             <a class=" dropdown-toggle nav-link d-flex align-items-center"
+                                data-toggle="dropdown"><i data-feather="hash"></i>
+                                <span>
+                                    @lang('words.coupon')
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.Coupon.add') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.coupon-add')</span>
+                                    </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('Panel.coupons') }}" data-toggle="dropdown">
+                                        <i data-feather="chevrons-right"></i>
+                                        <span>@lang('words.coupon-list')</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown nav-item" data-menu="dropdown">
+                            <a class=" dropdown-toggle nav-link d-flex align-items-center"
                                 data-toggle="dropdown"><i data-feather="user"></i>
                                 <span>
                                     @lang('words.user')

@@ -18,6 +18,8 @@ return [
     'website-title' => 'Website Başlık',
     'website-description' => 'Website Açıklama',
     'save' => 'Kaydet',
+    'update' => 'Güncelle',
+    'clean' => 'Temizle',
     'file-select' => 'Dosya Seç',
     'error' => 'Başarısız',
     'favorite' => 'Favori',
@@ -487,4 +489,30 @@ return [
     'redirect' => 'Yönlendiriliyorsunuz',
     'logout-success' => 'Çıkış işlemi başarıyla gerçekleşti.',
 
+    'coupon' => 'Kupon',
+    'coupon-add' => 'Kupon Ekle',
+    'coupon-code' => 'Kupon Kod',
+    'coupon-discount' => 'Kupon İndirim',
+    'coupon-discount-alert' => 'Fiyat olarak giriniz.',
+    'coupon-edit' => 'Kupon Düzenle',
+    'coupon-list' => 'Kupon Listesi',
+
+    'coupon-alert' => 'Kuponlar sadece bir kez kullanılabilmektedir..',
+    'coupon-code-required' => 'Kupon Kod alanı zorunludur.',
+    'coupon-code-max' => 'Kupon Kod alanı en fazla :max karakter olmalıdır.',
+
+    'coupon-discount-required' => 'Kupon İndirim alanı zorunludur.',
+    'coupon-discount-integer' => 'Kupon İndirim alanı alanı sayısal ifade olmalıdır.',
+    'coupon-discount-max' => 'Kupon İndirim alanı en fazla :max olmalıdır.',
+
+    'coupon-success' => 'Kupon ekleme işlemi başarıyla gerçekleşti.',
+    'coupon-update-success' => 'Kupon güncelleme işlemi başarıyla gerçekleşti.',
+    'coupon-delete-success' => 'Kupon silme işlemi başarıyla gerçekleşti.',
+
+    'discount-code' => 'İndirim Kodu',
+    'complete-shopping' => 'Alışverişi Tamamla',
+    'discount' => 'İndirim',
+    'not-null-discount-code' => 'İndirim Uygulandı',
+    'discount-success' => 'İndirim Kodu başarıyla tanımlandı.',
+    'discount-error' => 'İndirim Kodu tanımlama işlemi başarısız.',
 ];

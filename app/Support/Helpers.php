@@ -58,6 +58,7 @@ function priceToFormat($price)
 {
     return number_format($price, 2, '.', '.');
 }
+
 function replaceFormat($data)
 {
     $return = str_replace(',', '.', $data);
@@ -68,4 +69,9 @@ function maxCaharacter($string, $value)
 {
     $data = substr($string, 0, $value) . "...";
     return $data;
+}
+function replaceFormatTwo($data)
+{
+    $return = str_replace(',', '', $data);
+    return $return;
 }

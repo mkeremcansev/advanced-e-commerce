@@ -6,6 +6,7 @@ use App\Models\Announcement;
 use App\Models\Brand;
 use App\Models\Campaign;
 use App\Models\Category;
+use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Service;
@@ -41,6 +42,7 @@ class ViewSharePovider extends ServiceProvider
             view()->share('admins', User::where('status', 1)->orderBy('id', 'DESC')->get());
             view()->share('blockeds', User::where('status', 2)->orderBy('id', 'DESC')->get());
             view()->share('services', Service::orderBy('id', 'DESC')->get());
+            view()->share('coupons', Coupon::orderBy('id', 'DESC')->get());
             view()->share('products', Product::with(['getCategory', 'getBrand', 'getVariant.getVariantValue'])->orderBy('id', 'DESC')->get());
             view()->share('users', User::orderBy('id', 'DESC')->get());
             view()->share('reviews', Review::orderBy('id', 'DESC')->get());
