@@ -95,7 +95,7 @@
                                                 </li>
                                             @elseif(Auth::check() && Auth::user()->status == 2)
                                                 <li>
-                                                    <a class="canseworksFontWeight" href="{{ route('Panel.main') }}">@lang('words.homepage') (@lang('words.banned-user'))</a>
+                                                    <a class="canseworksFontWeight" href="{{ route('Web.main') }}">@lang('words.homepage') (@lang('words.banned-user'))</a>
                                                 </li>
                                                 <li>
                                                     <a class="canseworksFontWeight" href="{{ route('Panel.logout') }}">@lang('words.logout')</a>
