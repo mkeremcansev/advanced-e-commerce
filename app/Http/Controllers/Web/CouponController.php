@@ -11,6 +11,14 @@ class CouponController extends Controller
 {
     public function create(Request $request)
     {
+        $request->validate(
+            [
+                'coupon' => 'required',
+            ],
+            [
+                'coupon.required' => __('words.coupon-code-required'),
+            ]
+        );
         $coupon = Coupon::where('coupon', $request->coupon)->where('status', 1)->first();
         if ($coupon && !Session::get('coupon')) {
             $request->session()->put('coupon', $coupon->discount);

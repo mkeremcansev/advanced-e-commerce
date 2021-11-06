@@ -45,6 +45,18 @@ $(document).ready(function () {
         });
     </script>
 @endif
+@if(count($errors) > 0)
+@foreach($errors->all() as $error)
+<script>
+    iziToast.options = {
+                "preventDuplicates": true
+            }
+            iziToast.error({
+            message: "{{ $error }}"
+        });
+</script>
+@endforeach
+@endif
 @endsection
 @section('content')
 <main class="main">

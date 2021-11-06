@@ -144,7 +144,7 @@ return [
     'hello-user' => 'Merhaba, :name.',
     'hello' => 'Merhaba',
     'verify-warn' => 'Soru ve sorunlarınız için',
-    'verify-warn-to' => 'adresinden bize e-posta gönderebilirsiniz. Teşekkürler',
+    'verify-warn-to' => 'adresinden bize e-posta gönderebilirsiniz.',
     'verify-desc' => 'üyelik kaydınız başarıyla oluşturulmuştur. Hesabınızın aktif olabilmesi için aşağıdaki aktivasyon bağlantısını tıklayınız veya bağlantı adresini kopyalayıp tarayıcınızın adres kısmına yapıştırarak işlemi tamamlayınız.',
     'logout' => 'Çıkış Yap',
     'my-info' => 'Bilgilerim',
@@ -530,4 +530,5 @@ return [
     'distance-sales-agreement-required' => 'Mesafeli Satış Sözleşmesi alanı zorunludur.',
     'illumination-and-consent-text-required' => 'Aydınlatma ve Rıza Metni alanı zorunludur.',
     'privacy-policy-required' => 'Gizlilik Politikası alanı zorunludur.',
+    'coupon-code-required' => 'İndirim Kodu alanı zorunludur.',
 ];
