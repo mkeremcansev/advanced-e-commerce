@@ -16,12 +16,16 @@
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-                                @if (Auth::check() && Auth::user()->status == false)
+                                @if (Auth::check() && Auth::user()->status == 0)
                                     <a href="{{ route('Web.Account') }}">
                                         <i class="fi-rs-user"></i>
                                     </a>
-                                @elseif(Auth::check() && Auth::user()->status == true)
+                                @elseif(Auth::check() && Auth::user()->status == 1)
                                     <a href="{{ route('Panel.main') }}">
+                                        <i class="fi-rs-user"></i>
+                                    </a>
+                                @elseif(Auth::check() && Auth::user()->status == 2)
+                                    <a href="{{ route('Web.main') }}">
                                         <i class="fi-rs-user"></i>
                                     </a>
                                 @else
