@@ -47,10 +47,10 @@ class AccountController extends Controller
 
     public function verify()
     {
-        $user = User::where('id', Auth::user()->id)->first();
-        $user->send = true;
-        $user->save();
         Mail::to(Auth::user()->email)->send(new Verification(Auth::user()->verification));
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->send = 1;
+        $user->save();
         return response()->json(['success' => __('words.verify-email-success')]);
     }
 
@@ -58,7 +58,7 @@ class AccountController extends Controller
     {
         $user = User::where('verification', $code)->first();
         if ($user && $user->verify == false && $user->id == Auth::user()->id) {
-            $user->verify = true;
+            $user->verify = 1;
             $user->verification = Str::random(20);
             $user->save();
             return redirect()->route('Web.Account')->with('success', __('words.verify-success'));

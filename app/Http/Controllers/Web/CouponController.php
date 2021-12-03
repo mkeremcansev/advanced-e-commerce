@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -20,7 +21,7 @@ class CouponController extends Controller
             ]
         );
         $coupon = Coupon::where('coupon', $request->coupon)->where('status', 1)->first();
-        if ($coupon && !Session::get('coupon')) {
+        if ($coupon && !Session::get('coupon') && replaceFormatTwo(Cart::instance('cart')->total()) >= $coupon->discount) {
             $request->session()->put('coupon', $coupon->discount);
             $coupon->status = 0;
             $coupon->save();

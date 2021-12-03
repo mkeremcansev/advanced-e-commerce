@@ -138,8 +138,7 @@ $(document).ready(function () {
                                     </div>
                                     <div class="cart-action text-end">
                                         @if (Session::get('coupon'))
-                                        <input class="font-medium col-lg-2 cwFloatLeft" name="coupon" disabled placeholder="@lang('words.not-null-discount-code')">
-                                        <button class="btn mb-sm-15 col-lg-2 cwCustomBtn" disabled>@lang('words.update')</button>
+                                        <input type="text" class="col-lg-4 cwFloatLeft" value="@lang('words.not-null-discount-code')" disabled >
                                         @else
                                             <form action="{{ route('Web.Coupon.add') }}" method="POST">
                                                 @csrf
