@@ -16,4 +16,4 @@ In the public folder:
 - Product
 - Service
 
-It must be created.
+- It must be created.
